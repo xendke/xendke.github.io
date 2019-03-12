@@ -24,7 +24,12 @@ class TopSegment extends Component {
                         </List.Item>
                         <List.Item icon='marker' content='White Plains, NY' />
                         <List.Item icon='phone' content='(914) 565-1708' />
-                        <List.Item icon='mail' content={<a href='mailto:xendke@gmail.com'>xendke@gmail.com</a>} />
+                        <List.Item
+                          icon='mail'
+                          content={
+                            <a style={{ 'word-break': 'break-word' }} href='mailto:xendke@gmail.com'>xendke@gmail.com</a>
+                          }
+                        />
                     </List>
                     </Container>
                 </Grid.Column>

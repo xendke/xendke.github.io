@@ -35,7 +35,7 @@ class App extends Component {
         </Container>
         <Divider/>
         <Container textAlign='center' style={{paddingBottom: 15, color: "grey"}}>
-          <a href="https://github.com/xendke/xendke-io" target="_blank" rel="noopener noreferrer" style={{color: "grey"}}> Made with React.js and ❤️</a>
+          <a href="https://github.com/xendke/xendke.github.io/tree/dev" id="linkToRepo" target="_blank" rel="noopener noreferrer" style={{color: "grey"}}> Made with React.js and <span role="img" aria-label="heart" aria-labelledby="linkToRepo">❤️</span></a>
         </Container>
       </div>
     );
