@@ -6,5 +6,5 @@ const finished = () => {
 
 ghpages.publish('dist', {
   branch: 'master',
-  repo: 'https://github.com/xendke/xendke.github.io'
+  message: 'Deployment'
 }, finished);
