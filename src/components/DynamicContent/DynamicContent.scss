@@ -1,0 +1,27 @@
+@import 'src/styles.scss';
+
+.DynamicContent {
+    font-family: 'Muli', sans-serif;
+    padding: 0px 30px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    scroll-snap-type: y mandatory;
+    
+    @include atBreakpoint(tablet) {
+        width: 80%;
+        height: 500px;
+        -webkit-mask-image: linear-gradient(rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0.35));
+        mask-image: linear-gradient(rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0.35));
+    }
+
+    .Section {
+        scroll-snap-align: start;
+
+        .indent {
+            border-left: 1px solid white;
+            margin-left: 10px;
+            padding-left: 20px;
+        }
+    }
+    &::-webkit-scrollbar { width: 0 !important }
+}

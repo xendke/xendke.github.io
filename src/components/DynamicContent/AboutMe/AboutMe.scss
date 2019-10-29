@@ -1,0 +1,17 @@
+.AboutMe {
+
+    .links {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 30px 0px;
+
+        .linkLogoContainer {
+            width: 50px;
+            margin: auto;
+            margin-bottom: 3px;
+            img {
+                filter: invert(100%)
+            }
+        }
+    }
+}

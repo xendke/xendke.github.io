@@ -1,0 +1,31 @@
+/* Constants */
+$white: #F8F8FF;
+$max-width: 1000px;
+
+/* Usage:
+    @include atBreakpoint(tablet) { color: blue }
+    @include atBreakpoint(min-width, 1192px) {}
+*/
+@mixin atBreakpoint($point, $value: 0) {
+    @if $point == mobile {
+        @media (min-width: 320px) { @content; }
+    }
+    @else if $point == mobile-horizontal {
+        @media (min-width: 568px) { @content; }
+    }
+    @else if $point == tablet {
+        @media (min-width: 768px) { @content; }
+    }
+    @else if $point == tablet-horizontal {
+        @media (min-width: 1024px) { @content; }
+    }
+    @else if $point == desktop {
+        @media (min-width: 1280px) { @content; }
+    }
+    @else if $point == desktop-wide {
+        @media (min-width: 1500px) { @content; }
+    }
+    @else {
+        @media ($point: $value) { @content; }
+    }
+}
