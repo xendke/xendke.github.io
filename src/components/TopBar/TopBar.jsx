@@ -1,4 +1,5 @@
 import React from 'react';
+import imageOfJuan from 'assets/self.png';
 import './TopBar.scss';
 
 const TopBar = () => {
@@ -7,7 +8,7 @@ const TopBar = () => {
             <div>
                 <img
                     className="avatar"
-                    src="https://xendke.github.io/self.png"
+                    src={imageOfJuan}
                     alt="Picture of Juan smiling to the camera."
                 />
             </div>
