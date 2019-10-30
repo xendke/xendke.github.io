@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react';
 import TopBar from 'components/TopBar/TopBar';
 import SideBar from 'components/SideBar/SideBar';
 import DynamicContent from 'components/DynamicContent/DynamicContent';
-import 'assets/favicon.ico';
 import './App.scss';
 
 const App = () => {

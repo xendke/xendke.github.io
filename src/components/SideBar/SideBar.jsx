@@ -5,7 +5,8 @@ const ListItem = ({ page, name, label, handleSectionChange }) => (
     <li
         className={page === name ? 'selected' : null}
         onClick={
-            () => {
+            (event) => {
+                event.target.blur();
                 handleSectionChange(name);
             }
         }
