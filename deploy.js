@@ -1,20 +1,13 @@
-const ghpages = require('gh-pages');
-const fs = require('fs');
+const gh_pages = require('gh-pages');
+const child_process = require('child_process');
 
-const getLatestCommitMessage = () => {
-  const rev = fs.readFileSync('.git/HEAD').toString();
-  if (rev.indexOf(':') === -1) {
-      return rev;
-  } else {
-      return fs.readFileSync('.git/' + rev.substring(5)).toString();
-  }
-}
+child_process.exec('git show-branch --no-name HEAD', function(err, stdout) {
+  if(err) throw 'Error getting latest commit message.';
 
-const finished = () => {
-  console.log('Done publishing to xendke.github.com!');
-};
-
-ghpages.publish('dist', {
-  branch: 'master',
-  message: getLatestCommitMessage()
-}, finished);
+  gh_pages.publish('dist', {
+    branch: 'master',
+    message: stdout
+  }, () => {
+    console.log('Done publishing to xendke.github.com!');
+  });
+});
