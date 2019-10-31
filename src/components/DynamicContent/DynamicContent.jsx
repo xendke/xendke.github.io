@@ -43,7 +43,7 @@ const DynamicContent = ({ refs, handleSectionChange }) => {
             <ScrollTarget ref={refs.about}><AboutMe /></ScrollTarget>
             <ScrollTarget ref={refs.experience}><Experience /></ScrollTarget>
             <ScrollTarget ref={refs.education}><Education /></ScrollTarget>
-            <ScrollTarget ref={refs.projects}><Projects /></ScrollTarget>
+            <ScrollTarget ref={refs.projects} last={true}><Projects /></ScrollTarget>
         </div>
     );
 }

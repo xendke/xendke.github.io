@@ -5,5 +5,9 @@
     
     @include atBreakpoint(tablet) {
         padding-bottom: 100px;
+        
+        &.lastSection {
+            padding-bottom: 500px;
+        }
     }
 }

@@ -9,7 +9,7 @@
     
     @include atBreakpoint(tablet) {
         width: 80%;
-        height: 500px;
+        height: 70vh;
         -webkit-mask-image: linear-gradient(rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0.35));
         mask-image: linear-gradient(rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0.35));
     }
