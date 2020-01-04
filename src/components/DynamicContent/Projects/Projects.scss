@@ -1,3 +1,5 @@
+@import 'src/styles.scss';
+
 .Section.Projects {
 
 	.flex {
@@ -6,7 +8,10 @@
 
 		.indent {
 			margin-bottom: 20px;
-			flex-basis: 44%;
+
+			@include atBreakpoint(tablet) {
+				flex-basis: 44%;
+			}
 			
 			h1 {
 				margin: 5px 0px;
