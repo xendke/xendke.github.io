@@ -1,0 +1,16 @@
+.Section.Projects {
+
+	.flex {
+		display: flex;
+		flex-wrap: wrap;
+
+		.indent {
+			margin-bottom: 20px;
+			flex-basis: 44%;
+			
+			h1 {
+				margin: 5px 0px;
+			}
+		}
+	}
+}
