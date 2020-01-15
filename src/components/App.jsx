@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import TopBar from 'components/TopBar/TopBar';
 import SideBar from 'components/SideBar/SideBar';
 import DynamicContent from 'components/DynamicContent/DynamicContent';
@@ -20,6 +20,10 @@ const App = () => {
             refs[name].current.scrollIntoView({ block: 'start', inline: 'nearest', behavior: 'smooth' });
         }
     }
+
+    useEffect(() => {
+        document.body.removeChild(document.getElementById("global-loader"));
+    }, []);
 
     return (
         <div className="App">
