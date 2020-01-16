@@ -38,6 +38,11 @@ module.exports = {
       {
         test: /\.ico$/,
         loader: 'file-loader?name=[name].[ext]'  // <-- retain original file name
+      },
+      {
+        test: /\.json$/,
+        type: 'javascript/auto',
+        loader: 'file-loader?name=[name].[ext]'  // <-- retain original file name
       }
     ]
   },
