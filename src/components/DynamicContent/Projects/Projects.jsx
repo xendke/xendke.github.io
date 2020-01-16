@@ -28,7 +28,7 @@ const Projects = () => {
                 </div>
                 <div className="indent">
                     <h1>More</h1>
-                    <p>I have way more projects, check them all out <a href="https://github.com/xendke" target="_blank" rel="noopener noreferrer">here</a>.</p>
+                    <p>Feel free to check out all of <a href="https://github.com/xendke" target="_blank" rel="noopener noreferrer">my projects</a> on Github!</p>
                 </div>
             </div>
         </div>
