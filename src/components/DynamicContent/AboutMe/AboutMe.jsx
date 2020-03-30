@@ -9,7 +9,7 @@ const AboutMe = () => {
         <div className="Section AboutMe">
             <h1>About Me</h1>
             <div className="indent"> 
-                <p>Hello, my name is Juan Xavier Gomez and I love creating and tinkering! I'm a front end engineer. I usually work with React, SCSS, Redux, etc. I also love working with Node and Python! I am currently working on creating and maintaining eCommerce single page applications.</p>
+                <p>Hello, my name is Juan Xavier Gomez and I love creating and tinkering! I'm a front end engineer. I usually work with React, SCSS, Redux, etc. I also love working with Node and Python! I am currently working at FanDuel where my team and I maintain international products.</p>
                 <div className="links">
                     <a href="https://www.linkedin.com/in/juanxg/">
                         <div className="linkLogoContainer">

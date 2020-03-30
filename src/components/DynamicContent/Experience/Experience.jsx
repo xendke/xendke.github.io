@@ -16,10 +16,16 @@ const Experience = () => {
         <div className="Section Experience">
             <h1>Experience</h1>
             <Job
+                name="FanDuel Group"
+                position="Front End Engineer"
+                dateRange="March 2020 - Present"
+                description="At FanDuel, my team and I are working maintaining and developing international products."
+            />
+            <Job
                 name="Synapse Group Inc"
                 position="Front End Engineer"
-                dateRange="September 2018 - Present"
-                description="At Synapse, I create and maintain eCommerce React web applications for the company's multiple channels of revenue. We practice the Agile work environment where we use tools such as Rally and Jira for planning and task management."
+                dateRange="September 2018 - March 2020"
+                description="At Synapse, I created and maintained eCommerce React web applications for the company's multiple channels of revenue. We practice the Agile work environment where we use tools such as Rally and Jira for planning and task management."
             />
             <Job
                 name="Web Dev Freelance"
