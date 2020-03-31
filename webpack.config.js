@@ -36,7 +36,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.ico$/,
+        test: /\.(ico|txt)$/,
         loader: 'file-loader?name=[name].[ext]'  // <-- retain original file name
       }
     ]

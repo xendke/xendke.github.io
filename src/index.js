@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from 'components/App';
 import 'assets/favicon.ico';
+import 'assets/keybase.txt';
 import 'normalize.css';
 
 if(location.search.includes('?devstack')) {
