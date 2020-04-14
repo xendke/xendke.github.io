@@ -8,8 +8,8 @@ const TopBar = () => {
         <div className="TopBar">
             <div>
                 <picture>
-                    <source srcset={imageOfJuanWebP} type="image/webp" />
-                    <source srcset={imageOfJuan} type="image/png" /> 
+                    <source srcSet={imageOfJuanWebP} type="image/webp" />
+                    <source srcSet={imageOfJuan} type="image/png" /> 
                     <img 
                         className="avatar"
                         src={imageOfJuan}
