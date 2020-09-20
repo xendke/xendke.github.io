@@ -37,7 +37,7 @@ const Experience = () => {
                 name="Coditum"
                 position="Teacher"
                 dateRange="September 2016 - September 2018"
-                description="At Coditum, I taught kids and teenagers fundamentails of programming and even college topics such as data structures and algorithms. I taught in Python and Java!"
+                description="At Coditum, I taught kids and teenagers fundamentals of programming and even college topics such as data structures and algorithms. I taught in Python and Java!"
             />
         </div>
     );
