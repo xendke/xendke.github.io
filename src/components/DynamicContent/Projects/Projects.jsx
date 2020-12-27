@@ -17,8 +17,8 @@ const Projects = () => {
                     <p>I developed and maintained many web applications at Synapse. Here are some examples: <Link href="https://magazinediscountcenter.com/">One</Link> and <Link href="https://mdc.magazinediscountcenter.com/bizrateapptest/#/split/BIZ3306/webpromotion=20003054">Two</Link>.</p>
                 </div>
                 <div className="indent">
-                    <h1>Xendke</h1>
-                    <p>The website you are on right now. This app is built with React and SCSS.</p>
+                    <h1>ShyApp</h1>
+                    <p>A small social media application similar to twitter but users connect with people only through #interests. <Link href="https://shy-app-io.web.app">Demo</Link> & <Link href="https://github.com/xendke/shy-app">Code</Link>.</p>
                 </div>
                 <div className="indent">
                     <h1>Catchup</h1>
@@ -34,7 +34,7 @@ const Projects = () => {
                 </div>
                 <div className="indent">
                     <h1>More</h1>
-                    <p>Feel free to check out all of <a href="https://github.com/xendke" target="_blank" rel="noopener noreferrer">my projects</a> on Github!</p>
+                    <p>Feel free to check out all of <Link href="https://github.com/xendke">my projects</Link> on Github!</p>
                 </div>
             </div>
         </div>
