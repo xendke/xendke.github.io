@@ -17,8 +17,8 @@ const Projects = () => {
                     <p>I developed and maintained many web applications at Synapse. Here are some examples: <Link href="https://magazinediscountcenter.com/">One</Link> and <Link href="https://mdc.magazinediscountcenter.com/bizrateapptest/#/split/BIZ3306/webpromotion=20003054">Two</Link>.</p>
                 </div>
                 <div className="indent">
-                    <h1>ShyApp</h1>
-                    <p>A small social media application similar to twitter but users connect with people only through #interests. <Link href="https://shy-app-io.web.app">Demo</Link> & <Link href="https://github.com/xendke/shy-app">Code</Link>.</p>
+                    <h1>Mousy</h1>
+                    <p>A small social media application similar to twitter but users connect with people only through #interests. <Link href="https://mousy.io">Demo</Link> & <Link href="https://github.com/xendke/mousy">Code</Link>.</p>
                 </div>
                 <div className="indent">
                     <h1>Catchup</h1>
