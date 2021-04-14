@@ -8,6 +8,6 @@ child_process.exec('git show-branch --no-name HEAD', function(err, stdout) {
     branch: 'master',
     message: stdout
   }, () => {
-    console.log('Done publishing to xendke.github.com!');
+    console.log('Done publishing to xendke.github.io!');
   });
 });
