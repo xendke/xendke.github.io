@@ -1,46 +1,45 @@
 @import 'src/styles.scss';
 
 .TopBar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0px;
-    font-family: 'Muli', sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 20px 0px;
+	font-family: 'Muli', sans-serif;
 
-    @include atBreakpoint(tablet) {
-        flex-direction: row;
-        justify-content: space-between;
-        max-width: $max-width;
-        margin: auto;
-        padding: 40px 20px;
-        height: 15vh;
-    }
+	@include atBreakpoint(tablet) {
+		flex-direction: row;
+		justify-content: space-between;
+		max-width: $max-width;
+		margin: auto;
+		padding: 40px 20px;
+		height: 15vh;
+	}
 
-    .avatar {
-        width: 150px;
-        height: auto;
-        border-radius: 50%;
-        border: 2px solid $white;
-        box-shadow: 0px 2px 8px 0px black;
-    }
-    .line {
-        text-align: center;
-        margin: 8px 0px;
+	.avatar {
+		width: 150px;
+		height: auto;
+		border-radius: 50%;
+		border: 2px solid $white;
+		box-shadow: 0px 2px 8px 0px black;
+	}
+	.line {
+		text-align: center;
+		margin: 8px 0px;
 
+		@include atBreakpoint(tablet) {
+			text-align: right;
+		}
 
-        @include atBreakpoint(tablet) {
-            text-align: right;
-        }
-
-        &.name {
-            font-size: 25px;
-            text-shadow: 0px 2px 5px black;
-        }
-        &.title {
-            font-size: 17px;
-        }
-        &.email {
-            font-size: 15px;
-        }
-    }
+		&.name {
+			font-size: 25px;
+			text-shadow: 0px 2px 5px black;
+		}
+		&.title {
+			font-size: 17px;
+		}
+		&.email {
+			font-size: 15px;
+		}
+	}
 }

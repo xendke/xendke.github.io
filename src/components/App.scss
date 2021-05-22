@@ -1,18 +1,19 @@
 @import 'src/styles.scss';
 
 @include atBreakpoint(tablet) {
-    html, body {
-        overflow: hidden;
-    }
+	html,
+	body {
+		overflow: hidden;
+	}
 }
 @include atBreakpoint(tablet) {
-    body {
-        height: 100vh;
-    }
+	body {
+		height: 100vh;
+	}
 }
 
 .container {
-    display: flex;
-    max-width: $max-width;
-    margin: auto;
+	display: flex;
+	max-width: $max-width;
+	margin: auto;
 }

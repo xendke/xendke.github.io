@@ -1,46 +1,47 @@
-import React, { useState, useRef, useEffect } from 'react';
-import TopBar from 'components/TopBar/TopBar';
-import SideBar from 'components/SideBar/SideBar';
-import DynamicContent from 'components/DynamicContent/DynamicContent';
-import './App.scss';
+import React, { useState, useRef, useEffect } from 'react'
+import TopBar from 'components/TopBar/TopBar'
+import SideBar from 'components/SideBar/SideBar'
+import DynamicContent from 'components/DynamicContent/DynamicContent'
+import './App.scss'
 
 const App = () => {
-    const [page, setPage] = useState('about');
+	const [page, setPage] = useState('about')
 
-    const refs = {
-        about: useRef(null),
-        experience: useRef(null),
-        education: useRef(null),
-        projects: useRef(null)
-    }
+	const refs = {
+		about: useRef(null),
+		experience: useRef(null),
+		education: useRef(null),
+		projects: useRef(null),
+	}
 
-    const changeSection = (name, options = { noScroll: false }) => {
-        setPage(name);
-        if(refs[name].current && !options.noScroll){
-            refs[name].current.scrollIntoView({ block: 'start', inline: 'nearest', behavior: 'smooth' });
-        }
-    }
+	const changeSection = (name, options = { noScroll: false }) => {
+		setPage(name)
+		if (refs[name].current && !options.noScroll) {
+			refs[name].current.scrollIntoView({
+				block: 'start',
+				inline: 'nearest',
+				behavior: 'smooth',
+			})
+		}
+	}
 
-    useEffect(() => {
-        document.body.removeChild(document.getElementById("global-loader"));
-    }, []);
+	useEffect(() => {
+		document.body.removeChild(document.getElementById('global-loader'))
+	}, [])
 
-    return (
-        <div className="App">
-            <TopBar />
-            <div className="container">
-                <SideBar
-                    page={page}
-                    handleSectionChange={changeSection}
-                />
-                <DynamicContent
-                    page={page}
-                    refs={refs}
-                    handleSectionChange={changeSection}
-                />
-            </div>
-        </div>
-    );
+	return (
+		<div className="App">
+			<TopBar />
+			<div className="container">
+				<SideBar page={page} handleSectionChange={changeSection} />
+				<DynamicContent
+					page={page}
+					refs={refs}
+					handleSectionChange={changeSection}
+				/>
+			</div>
+		</div>
+	)
 }
 
-export default App;
+export default App

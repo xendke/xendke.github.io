@@ -1,86 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-        <meta charset="utf-8">
-        <title>Juan X. Gomez</title>
-        <meta name="Description" content="Juan Xavier Gomez's personal website and virtual resume!">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#23204C">
-        <link rel="icon" href="/favicon.ico" type="image/x-icon">
-        <style>
-            @import url('https://fonts.googleapis.com/css?family=Muli|Oswald:500&display=swap');
-            body {
-                margin: 0;
-                background: linear-gradient(0.85turn, #23204C, #2D3967, #23204C);
-            }
-            @media only screen and (min-device-width: 768px)  {
-                body {
-                    width: 100vw;
-                    height: 100vh;
-                }
-            }
-            * {
-                color: #F8F8FF;
-            }
-            .loading-mask {
-                position: absolute;
-                width: 100vw;
-                height: 100vh;
-                background: #101010AA;
-                z-index: 1000;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            .loader,
-            .loader:after {
-                border-radius: 50%;
-                width: 10em;
-                height: 10em;
-            }
-            .loader {
-                margin: 60px auto;
-                font-size: 10px;
-                position: relative;
-                text-indent: -9999em;
-                border-top: 1.1em solid rgba(255, 255, 255, 0.2);
-                border-right: 1.1em solid rgba(255, 255, 255, 0.2);
-                border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
-                border-left: 1.1em solid #ffffff;
-                -webkit-transform: translateZ(0);
-                -ms-transform: translateZ(0);
-                transform: translateZ(0);
-                -webkit-animation: load8 1.1s infinite linear;
-                animation: load8 1.1s infinite linear;
-            }
-            @-webkit-keyframes load8 {
-                0% {
-                    -webkit-transform: rotate(0deg);
-                    transform: rotate(0deg);
-                }
-                100% {
-                    -webkit-transform: rotate(360deg);
-                    transform: rotate(360deg);
-                }
-            }
-            @keyframes load8 {
-                0% {
-                    -webkit-transform: rotate(0deg);
-                    transform: rotate(0deg);
-                }
-                100% {
-                    -webkit-transform: rotate(360deg);
-                    transform: rotate(360deg);
-                }
-            }
-
-        </style>
-    </head>
-    <body>
-        <noscript>This website requires JavaScript to function properly. Don't get me wrong, I love plain HTML/CSS but React.js is awesome!</noscript>
-        <div id="global-loader" class="loading-mask">
-            <div class="loader"></div>
-        </div>
-        <div id="root"></div>
-    </body>
+		<meta charset="utf-8" />
+		<title>Juan X. Gomez</title>
+		<meta
+			name="Description"
+			content="Juan Xavier Gomez's personal website and virtual resume!"
+		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#23204C" />
+		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+		<style>
+			@import url('https://fonts.googleapis.com/css?family=Muli|Oswald:500&display=swap');
+			body {
+				margin: 0;
+				background: linear-gradient(
+					0.85turn,
+					#23204c,
+					#2d3967,
+					#23204c
+				);
+			}
+			@media only screen and (min-device-width: 768px) {
+				body {
+					width: 100vw;
+					height: 100vh;
+				}
+			}
+			* {
+				color: #f8f8ff;
+			}
+			.loading-mask {
+				position: absolute;
+				width: 100vw;
+				height: 100vh;
+				background: #101010aa;
+				z-index: 1000;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.loader,
+			.loader:after {
+				border-radius: 50%;
+				width: 10em;
+				height: 10em;
+			}
+			.loader {
+				margin: 60px auto;
+				font-size: 10px;
+				position: relative;
+				text-indent: -9999em;
+				border-top: 1.1em solid rgba(255, 255, 255, 0.2);
+				border-right: 1.1em solid rgba(255, 255, 255, 0.2);
+				border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
+				border-left: 1.1em solid #ffffff;
+				-webkit-transform: translateZ(0);
+				-ms-transform: translateZ(0);
+				transform: translateZ(0);
+				-webkit-animation: load8 1.1s infinite linear;
+				animation: load8 1.1s infinite linear;
+			}
+			@-webkit-keyframes load8 {
+				0% {
+					-webkit-transform: rotate(0deg);
+					transform: rotate(0deg);
+				}
+				100% {
+					-webkit-transform: rotate(360deg);
+					transform: rotate(360deg);
+				}
+			}
+			@keyframes load8 {
+				0% {
+					-webkit-transform: rotate(0deg);
+					transform: rotate(0deg);
+				}
+				100% {
+					-webkit-transform: rotate(360deg);
+					transform: rotate(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<noscript
+			>This website requires JavaScript to function properly. Don't get me
+			wrong, I love plain HTML/CSS but React.js is awesome!</noscript
+		>
+		<div id="global-loader" class="loading-mask">
+			<div class="loader"></div>
+		</div>
+		<div id="root"></div>
+	</body>
 </html>

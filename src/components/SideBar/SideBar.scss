@@ -1,30 +1,30 @@
 @import 'src/styles.scss';
 
 .SideBar {
-    display: none;
-    width: 20%;
-    font-family: 'Oswald', sans-serif;
-    font-size: 24px;
+	display: none;
+	width: 20%;
+	font-family: 'Oswald', sans-serif;
+	font-size: 24px;
 
-    @include atBreakpoint(tablet) {
-        display: block;
-    }
+	@include atBreakpoint(tablet) {
+		display: block;
+	}
 
-    ul {
-        list-style: none;
+	ul {
+		list-style: none;
 
-        li {
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: text-shadow 1s ease;
+		li {
+			text-transform: uppercase;
+			cursor: pointer;
+			transition: text-shadow 1s ease;
 
-            &:not(.selected) {
-                color: #FFFFFF55;
-            }
-            &:hover {
-                color: $white;
-                text-shadow: 0px 4px 20px #000000AA;
-            }
-        }
-    }
+			&:not(.selected) {
+				color: #ffffff55;
+			}
+			&:hover {
+				color: $white;
+				text-shadow: 0px 4px 20px #000000aa;
+			}
+		}
+	}
 }

@@ -1,7 +1,6 @@
 @import 'src/styles.scss';
 
 .Section.Projects {
-
 	.flex {
 		display: flex;
 		flex-wrap: wrap;
@@ -12,7 +11,7 @@
 			@include atBreakpoint(tablet) {
 				flex-basis: 44%;
 			}
-			
+
 			h1 {
 				margin: 5px 0px;
 			}
