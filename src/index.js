@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from 'components/App'
+import runAnimation, { WEBGL } from './animation'
 import 'assets/favicon.ico'
 import 'assets/keybase.txt'
 import 'normalize.css'
@@ -26,5 +27,8 @@ if (devstack !== null && devstack !== '') {
 
 	location.href = `https://devstack-jgomez${dateString}-web.use1.dev.us.fdbox.net`
 } else {
+	if (WEBGL.isWebGLAvailable()) {
+		runAnimation()
+	}
 	ReactDOM.render(<App />, document.getElementById('root'))
 }
