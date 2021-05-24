@@ -1,6 +1,10 @@
 /* Constants */
 $white: #e8e8e8;
+$grey: #bababa;
+$red: #f05454;
+$blue: #30475e;
 $max-width: 1000px;
+$shadow: #000000aa;
 
 /* Usage:
     @include atBreakpoint(tablet) { color: blue }

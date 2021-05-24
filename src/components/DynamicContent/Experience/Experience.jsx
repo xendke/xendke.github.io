@@ -18,15 +18,15 @@ const Experience = () => {
 			<h1>Experience</h1>
 			<Job
 				name="FanDuel Group"
-				position="Front End Engineer"
+				position="Software Engineer"
 				dateRange="March 2020 - Present"
-				description="At FanDuel, my team and I are working maintaining and developing international products."
+				description="At FanDuel, my team and I are working on developing and maintaining international products."
 			/>
 			<Job
 				name="Synapse Group Inc"
 				position="Front End Engineer"
 				dateRange="September 2018 - March 2020"
-				description="At Synapse, I created and maintained eCommerce React web applications for the company's multiple channels of revenue. We practice the Agile work environment where we use tools such as Rally and Jira for planning and task management."
+				description="At Synapse, I created and maintained Ecommerce React web applications for the company's multiple channels of revenue."
 			/>
 			<Job
 				name="Web Dev Freelance"

@@ -19,7 +19,7 @@ const TopBar = () => {
 			</div>
 			<div>
 				<p className="line name">Juan X. Gomez</p>
-				<p className="line title">Front End Engineer</p>
+				<p className="line title">Software Engineer</p>
 				<p className="line email">xendke@gmail.com</p>
 			</div>
 		</div>

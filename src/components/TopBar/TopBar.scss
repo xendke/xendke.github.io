@@ -20,12 +20,13 @@
 		width: 150px;
 		height: auto;
 		border-radius: 50%;
-		border: 2px solid $white;
-		box-shadow: 0px 2px 8px 0px black;
+		border: 2px solid $red;
+		box-shadow: 0px 2px 8px 0px $shadow;
 	}
 	.line {
 		text-align: center;
 		margin: 8px 0px;
+		color: $white;
 
 		@include atBreakpoint(tablet) {
 			text-align: right;
@@ -33,13 +34,15 @@
 
 		&.name {
 			font-size: 25px;
-			text-shadow: 0px 2px 5px black;
+			text-shadow: 0px 2px 5px $shadow;
 		}
 		&.title {
 			font-size: 17px;
+			color: $grey;
 		}
 		&.email {
 			font-size: 15px;
+			color: $grey;
 		}
 	}
 }

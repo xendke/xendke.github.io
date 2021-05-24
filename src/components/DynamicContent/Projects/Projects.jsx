@@ -13,7 +13,7 @@ const Projects = () => {
 			<h1>Projects</h1>
 			<div className="flex">
 				<div className="indent">
-					<h1>Synapse</h1>
+					<h2>Synapse</h2>
 					<p>
 						I developed and maintained many web applications at
 						Synapse. Here are some examples:{' '}
@@ -28,7 +28,7 @@ const Projects = () => {
 					</p>
 				</div>
 				<div className="indent">
-					<h1>Mousy</h1>
+					<h2>Mousy</h2>
 					<p>
 						A small social media application similar to twitter but
 						users connect with people only through #interests.{' '}
@@ -38,7 +38,7 @@ const Projects = () => {
 					</p>
 				</div>
 				<div className="indent">
-					<h1>Catchup</h1>
+					<h2>Catchup</h2>
 					<p>
 						An anonymous chat web app! React, SCSS, Firebase.{' '}
 						<Link href="https://github.com/xendke/catchup">
@@ -48,7 +48,7 @@ const Projects = () => {
 					</p>
 				</div>
 				<div className="indent">
-					<h1>Digitaizer</h1>
+					<h2>Digitaizer</h2>
 					<p>
 						Basic GUI and Neural Network to identify your
 						handwritten digits! Python, Tkinter, Pandas.{' '}
@@ -59,7 +59,7 @@ const Projects = () => {
 					</p>
 				</div>
 				<div className="indent">
-					<h1>Pet or Not</h1>
+					<h2>Pet or Not</h2>
 					<p>
 						A simple web app that can recognize whether a pet exist
 						in a given image!{' '}
@@ -73,7 +73,7 @@ const Projects = () => {
 					</p>
 				</div>
 				<div className="indent">
-					<h1>More</h1>
+					<h2>More</h2>
 					<p>
 						Feel free to check out all of{' '}
 						<Link href="https://github.com/xendke">
