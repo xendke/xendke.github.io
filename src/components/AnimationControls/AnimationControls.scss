@@ -1,0 +1,90 @@
+@import 'src/styles.scss';
+
+.AnimationControls {
+	font-family: 'Muli', sans-serif;
+	font-size: 14px;
+	font-weight: 800;
+	max-width: $max-width;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+
+	@include atBreakpoint(tablet) {
+		justify-content: flex-start;
+	}
+
+	.tab {
+		position: fixed;
+		bottom: 0;
+		background-color: $white;
+		color: $blue;
+		border-radius: 4px 4px 0 0;
+		min-height: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-left: 15px;
+		padding-right: 15px;
+		box-shadow: 0px 0px 5px 3px $shadow;
+		min-width: 180px;
+
+		$toggle-width: 50px;
+		$toggle-height: 25px;
+		$toggle-gutter: 5px;
+		$toggle-radius: 50%;
+		$toggle-control-speed: 0.15s;
+		$toggle-control-ease: ease-in;
+
+		$toggle-radius: $toggle-height / 2;
+		$toggle-control-size: $toggle-height - ($toggle-gutter * 2);
+
+		.toggle-control {
+			display: block;
+			position: relative;
+			padding-left: $toggle-width;
+			margin-bottom: 22px;
+			cursor: pointer;
+			user-select: none;
+
+			input {
+				position: absolute;
+				opacity: 0;
+				cursor: pointer;
+				height: 0;
+				width: 0;
+			}
+
+			input:checked ~ .control {
+				background-color: $blue;
+
+				&:after {
+					left: $toggle-width - $toggle-control-size - $toggle-gutter;
+				}
+			}
+
+			.control {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: $toggle-height;
+				width: $toggle-width;
+				border-radius: $toggle-radius;
+				background-color: $grey;
+				transition: background-color $toggle-control-speed
+					$toggle-control-ease;
+
+				&:after {
+					content: '';
+					position: absolute;
+					left: $toggle-gutter;
+					top: $toggle-gutter;
+					width: $toggle-control-size;
+					height: $toggle-control-size;
+					border-radius: $toggle-radius;
+					background: $white;
+					transition: left $toggle-control-speed $toggle-control-ease;
+				}
+			}
+		}
+	}
+}

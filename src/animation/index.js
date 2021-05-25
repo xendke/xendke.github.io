@@ -65,13 +65,16 @@ const runAnimation = () => {
 
 	const animate = () => {
 		requestAnimationFrame(animate)
-		planes.forEach((plane) => {
-			plane.rotation.x -= 0.0015
-			plane.rotation.y += 0.0015
-			if (planesVelocity) {
-				plane.rotation.z += planesVelocity
-			}
-		})
+		const animationDisabled = localStorage.getItem('animationDisabled')
+		if (!animationDisabled) {
+			planes.forEach((plane) => {
+				plane.rotation.x -= 0.0015
+				plane.rotation.y += 0.0015
+				if (planesVelocity) {
+					plane.rotation.z += planesVelocity
+				}
+			})
+		}
 		renderer.render(scene, camera)
 	}
 	animate()
