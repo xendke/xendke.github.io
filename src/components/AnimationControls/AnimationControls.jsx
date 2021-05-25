@@ -24,7 +24,10 @@ const AnimationControls = () => {
 					<input
 						type="checkbox"
 						checked={!isAnimationPaused}
-						onClick={toggleAnimation}
+						onChange={toggleAnimation}
+						onKeyPress={({ key }) =>
+							key === 'Enter' ? toggleAnimation() : null
+						}
 					/>
 					<span className="control"></span>
 				</label>
