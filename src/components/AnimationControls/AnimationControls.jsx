@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { WEBGL } from '../../animation'
 import './AnimationControls.scss'
 
 const ANIMATION_STATE = 'animationDisabled'
@@ -14,6 +15,10 @@ const AnimationControls = () => {
 		}
 		setIsAnimationPaused(true)
 		return localStorage.setItem(ANIMATION_STATE, true)
+	}
+
+	if (!WEBGL.isWebGLAvailable()) {
+		return null
 	}
 
 	return (

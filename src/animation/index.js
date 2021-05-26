@@ -45,11 +45,14 @@ const runAnimation = () => {
 			plane.rotation.z = multiplier * 0.001 - offset
 		})
 	}
-	window.addEventListener(
-		'scroll',
-		() => movePlanes(document.body.getBoundingClientRect().top),
-		false
-	)
+	const animationDisabled = localStorage.getItem('animationDisabled')
+	if (!animationDisabled) {
+		window.addEventListener(
+			'scroll',
+			() => movePlanes(document.body.getBoundingClientRect().top),
+			false
+		)
+	}
 	window.addEventListener(
 		'mousemove',
 		(event) => (planesVelocity = (event.pageX + event.pageY) / 1000000),
