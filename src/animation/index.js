@@ -46,13 +46,11 @@ const runAnimation = () => {
 		})
 	}
 	const animationDisabled = localStorage.getItem('animationDisabled')
-	if (!animationDisabled) {
-		window.addEventListener(
-			'scroll',
-			() => movePlanes(document.body.getBoundingClientRect().top),
-			false
-		)
-	}
+	window.addEventListener(
+		'scroll',
+		() => movePlanes(document.body.getBoundingClientRect().top),
+		false
+	)
 	window.addEventListener(
 		'mousemove',
 		(event) => (planesVelocity = (event.pageX + event.pageY) / 1000000),
@@ -64,7 +62,9 @@ const runAnimation = () => {
 		camera.updateProjectionMatrix()
 		renderer.setSize(window.innerWidth, window.innerHeight)
 	}
-	window.addEventListener('resize', resizeCanvas, false)
+	if (!animationDisabled) {
+		window.addEventListener('resize', resizeCanvas, false)
+	}
 
 	const animate = () => {
 		requestAnimationFrame(animate)
