@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import { WEBGL } from './helpers'
+import { WEBGL, debounce } from './helpers'
 
 const planeFactory = (color, index) => {
 	const geometry = new THREE.PlaneGeometry(100, 100, 30)
@@ -62,9 +62,7 @@ const runAnimation = () => {
 		camera.updateProjectionMatrix()
 		renderer.setSize(window.innerWidth, window.innerHeight)
 	}
-	if (!animationDisabled) {
-		window.addEventListener('resize', resizeCanvas, false)
-	}
+	window.addEventListener('resize', debounce(resizeCanvas, 500), false)
 
 	const animate = () => {
 		requestAnimationFrame(animate)
