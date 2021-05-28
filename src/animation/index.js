@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import { WEBGL, debounce } from './helpers'
+import { WEBGL, debounce, throttle } from './helpers'
 
 const planeFactory = (color, index) => {
 	const geometry = new THREE.PlaneGeometry(100, 100, 30)
@@ -45,17 +45,14 @@ const runAnimation = () => {
 			plane.rotation.z = multiplier * 0.001 - offset
 		})
 	}
-	const animationDisabled = localStorage.getItem('animationDisabled')
-	window.addEventListener(
-		'scroll',
-		() => movePlanes(document.body.getBoundingClientRect().top),
-		false
-	)
-	window.addEventListener(
-		'mousemove',
-		(event) => (planesVelocity = (event.pageX + event.pageY) / 1000000),
-		false
-	)
+
+	const scrollHandler = () =>
+		movePlanes(document.body.getBoundingClientRect().top)
+	window.addEventListener('scroll', throttle(scrollHandler, 20), false)
+
+	const mouseHandler = (event) =>
+		(planesVelocity = (event.pageX + event.pageY) / 1000000)
+	window.addEventListener('mousemove', throttle(mouseHandler, 1000), false)
 
 	function resizeCanvas() {
 		camera.aspect = window.innerWidth / window.innerHeight
