@@ -1,49 +1,60 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useState, useEffect, useCallback } from 'react'
 import ScrollTarget from './ScrollTarget/ScrollTarget'
 import AboutMe from './AboutMe/AboutMe'
 import Experience from './Experience/Experience'
 import Projects from './Projects/Projects'
 import Education from './Education/Education'
+import { debounce } from '../../animation/helpers'
 import './DynamicContent.scss'
 
 const DynamicContent = ({ refs, handleSectionChange }) => {
+	const [animationTimeout, setAnimationTimeout] = useState(null)
 	const dynamicContentRef = useRef(null)
+	const scrollHandler = useCallback(
+		debounce(() => {
+			if (dynamicContentRef.current) {
+				const containerTop =
+					dynamicContentRef.current.getBoundingClientRect().y
+
+				if (animationTimeout) {
+					window.cancelAnimationFrame(animationTimeout)
+				}
+				setAnimationTimeout(
+					window.requestAnimationFrame(() => {
+						for (let section in refs) {
+							const currentSectionTop =
+								refs[section].current.getBoundingClientRect().y
+							if (
+								Math.abs(
+									Math.floor(currentSectionTop) -
+										Math.floor(containerTop)
+								) < 100
+							) {
+								handleSectionChange(section, { noScroll: true })
+								break
+							}
+						}
+					})
+				)
+			}
+		}, 200),
+		[dynamicContentRef]
+	)
 
 	useEffect(() => {
 		if (dynamicContentRef.current) {
-			const containerTop =
-				dynamicContentRef.current.getBoundingClientRect().y
-			let timeout
-
-			const onScroll = () => {
-				if (timeout) {
-					window.cancelAnimationFrame(timeout)
-				}
-				timeout = window.requestAnimationFrame(() => {
-					for (let section in refs) {
-						const currentSectionTop =
-							refs[section].current.getBoundingClientRect().y
-						if (
-							Math.abs(
-								Math.floor(currentSectionTop) -
-									Math.floor(containerTop)
-							) < 100
-						) {
-							handleSectionChange(section, { noScroll: true })
-							break
-						}
-					}
-				})
-			}
-			dynamicContentRef.current.addEventListener('scroll', onScroll)
+			dynamicContentRef.current.addEventListener('scroll', scrollHandler)
 		}
 		return () => {
-			dynamicContentRef.current.removeEventListener('scroll', onScroll)
-			if (timeout) {
-				window.cancelAnimationFrame(timeout)
+			dynamicContentRef.current.removeEventListener(
+				'scroll',
+				scrollHandler
+			)
+			if (animationTimeout) {
+				window.cancelAnimationFrame(animationTimeout)
 			}
 		}
-	}, [dynamicContentRef])
+	}, [dynamicContentRef, animationTimeout])
 
 	return (
 		<div className="DynamicContent" ref={dynamicContentRef}>
