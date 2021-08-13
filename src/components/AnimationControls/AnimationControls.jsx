@@ -19,7 +19,7 @@ const AnimationControls = () => {
 
 	useEffect(() => {
 		try {
-			const canvasEl = document.getElementById('casnvas')
+			const canvasEl = document.getElementById('canvas')
 
 			if (isAnimationPaused) {
 				canvasEl.classList.add('blurred')
