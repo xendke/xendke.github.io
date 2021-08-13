@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { WEBGL } from '../../animation'
 import './AnimationControls.scss'
 
@@ -16,6 +16,21 @@ const AnimationControls = () => {
 		setIsAnimationPaused(true)
 		return localStorage.setItem(ANIMATION_STATE, true)
 	}
+
+	useEffect(() => {
+		try {
+			const canvasEl = document.getElementById('casnvas')
+
+			if (isAnimationPaused) {
+				canvasEl.classList.add('blurred')
+			} else {
+				canvasEl.classList.remove('blurred')
+			}
+		} catch (e) {
+			console.error(e)
+		}
+		return () => {}
+	}, [isAnimationPaused])
 
 	if (!WEBGL.isWebGLAvailable()) {
 		return null

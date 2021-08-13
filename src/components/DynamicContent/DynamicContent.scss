@@ -11,10 +11,10 @@
 		width: 80%;
 		height: 70vh;
 		-webkit-mask-image: linear-gradient(
-			rgba(0, 0, 0, 1),
+			rgba(0, 0, 0, 1) 40%,
 			rgba(0, 0, 0, 0.35)
 		);
-		mask-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.35));
+		mask-image: linear-gradient(rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0.35));
 	}
 
 	.Section {
