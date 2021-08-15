@@ -34,6 +34,11 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
+				transition: opacity ease-in-out 0.8s;
+			}
+			.loading-mask.invisible {
+				opacity: 0;
+				pointer-events: none;
 			}
 			.loader,
 			.loader:after {

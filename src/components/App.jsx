@@ -27,7 +27,7 @@ const App = () => {
 	}
 
 	useEffect(() => {
-		document.body.removeChild(document.getElementById('global-loader'))
+		document.getElementById('global-loader').classList.add('invisible')
 	}, [])
 
 	return (
