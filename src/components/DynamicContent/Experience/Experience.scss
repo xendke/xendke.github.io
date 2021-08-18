@@ -1,11 +1,59 @@
+@import 'src/styles.scss';
+
 .Experience {
+	.onlyMobile {
+		@include atBreakpoint(min-width, 0px) {
+			display: block;
+		}
+		@include atBreakpoint(tablet) {
+			display: none;
+		}
+	}
+	.atTablet {
+		@include atBreakpoint(min-width, 0px) {
+			display: none;
+		}
+		@include atBreakpoint(tablet) {
+			display: block;
+		}
+	}
+	.Job {
+		display: flex;
+		flex-direction: column;
+
+		margin-bottom: 30px;
+
+		@include atBreakpoint(tablet) {
+			flex-direction: row;
+
+			.info {
+				flex-basis: 33%;
+				flex-grow: 0;
+				flex-shrink: 0;
+				margin-bottom: 10px;
+			}
+			.description {
+				margin-top: 10px;
+			}
+		}
+	}
 	.companyName {
+		margin-top: 10px;
 		margin-bottom: 20px;
 		font-size: 22px;
+
+		@include atBreakpoint(tablet) {
+			font-size: 21px;
+			margin-top: 5px;
+		}
 	}
 	.position {
 		margin: 0;
 		font-size: 16px;
+
+		@include atBreakpoint(tablet) {
+			margin-top: 10px;
+		}
 	}
 	.dateRange {
 		margin: 0;
@@ -13,7 +61,7 @@
 		font-size: 14px;
 		color: #ffffffcc;
 	}
-	.description {
-		margin-top: 10px;
-	}
+	// .description {
+	// 	margin-top: 10px;
+	// }
 }
