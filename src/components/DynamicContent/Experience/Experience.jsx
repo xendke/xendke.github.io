@@ -26,7 +26,7 @@ const Experience = () => {
 			<Job
 				name="FanDuel Group"
 				position="Senior Software Engineer"
-				dateRange="August 2021 - Present"
+				dateRange="March 2020 - Present"
 				description="At FanDuel, my team and I are working on developing and maintaining international products."
 			/>
 			<Job
