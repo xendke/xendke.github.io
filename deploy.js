@@ -7,7 +7,7 @@ child_process.exec('git show-branch --no-name HEAD', function (err, stdout) {
 	gh_pages.publish(
 		'dist',
 		{
-			branch: 'master',
+			branch: 'pages',
 			message: stdout,
 		},
 		() => {
