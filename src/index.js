@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from 'components/App'
-import runAnimation, { WEBGL } from './animation'
 import 'normalize.css'
 
 const zeroPadded = (number) => (number > 9 ? number : `0${number}`)
@@ -25,8 +24,10 @@ if (devstack !== null && devstack !== '') {
 
 	location.href = `https://devstack-jgomez${dateString}-web.use1.dev.us.fdbox.net`
 } else {
-	if (WEBGL.isWebGLAvailable()) {
-		runAnimation()
-	}
+	import('./animation').then(({ default: runAnimation, WEBGL }) => {
+		if (WEBGL.isWebGLAvailable()) {
+			runAnimation()
+		}
+	})
 	ReactDOM.render(<App />, document.getElementById('root'))
 }
