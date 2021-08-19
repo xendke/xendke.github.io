@@ -1,3 +1,4 @@
+@use "sass:math";
 @import 'src/styles.scss';
 
 .AnimationControls {
@@ -35,7 +36,7 @@
 		$toggle-control-speed: 0.15s;
 		$toggle-control-ease: ease-in;
 
-		$toggle-radius: $toggle-height / 2;
+		$toggle-radius: math.div($toggle-height, 2);
 		$toggle-control-size: $toggle-height - ($toggle-gutter * 2);
 
 		.toggle-control {

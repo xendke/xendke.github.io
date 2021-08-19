@@ -1,4 +1,5 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
 const path = require('path')
 
 module.exports = {
@@ -31,16 +32,15 @@ module.exports = {
 					},
 				],
 			},
-			{
-				test: /\.(ico|txt)$/,
-				loader: 'file-loader?name=[name].[ext]', // <-- retain original file name
-			},
 		],
 	},
 	plugins: [
 		new HtmlWebPackPlugin({
 			template: './src/index.html',
 			filename: './index.html',
+		}),
+		new CopyPlugin({
+			patterns: [{ from: 'src/assets/keybase.txt', to: 'keybase.txt' }],
 		}),
 	],
 	resolve: {

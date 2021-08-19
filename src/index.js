@@ -2,8 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from 'components/App'
 import runAnimation, { WEBGL } from './animation'
-import 'assets/favicon.ico'
-import 'assets/keybase.txt'
 import 'normalize.css'
 
 const zeroPadded = (number) => (number > 9 ? number : `0${number}`)
