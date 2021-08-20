@@ -50,4 +50,9 @@ module.exports = {
 			assets: path.resolve(__dirname, 'src/assets/'),
 		},
 	},
+	optimization: {
+		splitChunks: {
+			chunks: 'all',
+		},
+	},
 }

@@ -1,9 +1,15 @@
-import React, { useRef, useState, useEffect, useCallback } from 'react'
+import React, {
+	Suspense,
+	useRef,
+	useState,
+	useEffect,
+	useCallback,
+} from 'react'
 import ScrollTarget from './ScrollTarget/ScrollTarget'
 import AboutMe from './AboutMe/AboutMe'
-import Experience from './Experience/Experience'
-import Projects from './Projects/Projects'
-import Education from './Education/Education'
+const Experience = React.lazy(() => import('./Experience/Experience'))
+const Education = React.lazy(() => import('./Education/Education'))
+const Projects = React.lazy(() => import('./Projects/Projects'))
 import { debounce } from '../../animation/helpers'
 import './DynamicContent.scss'
 
@@ -58,18 +64,20 @@ const DynamicContent = ({ refs, handleSectionChange }) => {
 
 	return (
 		<div className="DynamicContent" ref={dynamicContentRef}>
-			<ScrollTarget ref={refs.about}>
-				<AboutMe />
-			</ScrollTarget>
-			<ScrollTarget ref={refs.experience}>
-				<Experience />
-			</ScrollTarget>
-			<ScrollTarget ref={refs.education}>
-				<Education />
-			</ScrollTarget>
-			<ScrollTarget ref={refs.projects} last={true}>
-				<Projects />
-			</ScrollTarget>
+			<Suspense fallback={null}>
+				<ScrollTarget ref={refs.about}>
+					<AboutMe />
+				</ScrollTarget>
+				<ScrollTarget ref={refs.experience}>
+					<Experience />
+				</ScrollTarget>
+				<ScrollTarget ref={refs.education}>
+					<Education />
+				</ScrollTarget>
+				<ScrollTarget ref={refs.projects} last={true}>
+					<Projects />
+				</ScrollTarget>
+			</Suspense>
 		</div>
 	)
 }
