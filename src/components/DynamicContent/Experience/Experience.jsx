@@ -1,20 +1,41 @@
 import React from 'react'
 import './Experience.scss'
 
-const Job = ({ name, position, dateRange, description }) => (
+const Job = ({ name, positions }) => (
 	<div className="Job indent">
 		<div className="info">
 			<h3 className="companyName">{name}</h3>
-			<h4 className="position onlyMobile">
-				{position}
-				<br />
-				<span className="dateRange">[{dateRange}]</span>
-			</h4>
-			<span className="dateRange atTablet">[{dateRange}]</span>
+			{positions.map(({ name, dateRange, description }) => (
+				<React.Fragment key={name}>
+					<h4 className="position onlyMobile">
+						{name}
+						<br />
+						<span className="dateRange">[{dateRange}]</span>
+					</h4>
+
+					<p className="description onlyMobile">{description}</p>
+
+					{positions.length === 1 && (
+						<span className="dateRange atTablet">
+							[{dateRange}]
+						</span>
+					)}
+				</React.Fragment>
+			))}
 		</div>
 		<div>
-			<h4 className="position atTablet">{position}</h4>
-			<p className="description">{description}</p>
+			{positions.map(({ name, description, dateRange }) => (
+				<React.Fragment key={name}>
+					<h4 className="position atTablet">{name}</h4>
+
+					{positions.length > 1 && (
+						<span className="dateRange atTablet">
+							[{dateRange}]
+						</span>
+					)}
+					<p className="description atTablet">{description}</p>
+				</React.Fragment>
+			))}
 		</div>
 	</div>
 )
@@ -24,22 +45,42 @@ const Experience = () => {
 		<div className="Section Experience">
 			<h1>Experience</h1>
 			<Job
-				name="FanDuel Group"
-				position="Senior Software Engineer"
-				dateRange="March 2020 - Present"
-				description="At FanDuel, my team and I are working on developing and maintaining international products."
+				name="Codecademy"
+				positions={[
+					{
+						name: 'Senior Software Engineer',
+						dateRange: 'October 2021 - Present',
+						description: 'Helping with growth!',
+					},
+				]}
 			/>
 			<Job
-				name="Synapse Group Inc"
-				position="Software Engineer"
-				dateRange="September 2018 - March 2020"
-				description="At Synapse, I created and maintained Ecommerce React web applications for the company's multiple channels of revenue."
+				name="FanDuel"
+				positions={[
+					{
+						name: 'Senior Software Engineer',
+						dateRange: 'August 2020 - October 2021',
+						description:
+							'I lead my team while improving the whole DFS web platform and integrating with international partners.',
+					},
+					{
+						name: 'Software Engineer',
+						dateRange: 'March 2020 - August 2021',
+						description:
+							'My team and I refactored important user facing DFS views to React with unit/e2e testing and analytics.',
+					},
+				]}
 			/>
 			<Job
-				name="Freelance"
-				position="Software Engineer"
-				dateRange="September 2017 - February 2018"
-				description="At SUNY Purchase, I upgraded the front end application that the college library uses as their interlibrary loans solution."
+				name="Synapse"
+				positions={[
+					{
+						name: 'Software Engineer',
+						dateRange: 'September 2018 - March 2020',
+						description:
+							"At Synapse, I created and maintained Ecommerce React web applications for the company's multiple channels of revenue.",
+					},
+				]}
 			/>
 		</div>
 	)
