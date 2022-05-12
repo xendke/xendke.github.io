@@ -50,7 +50,8 @@ const Experience = () => {
 					{
 						name: 'Senior Software Engineer',
 						dateRange: 'October 2021 - Present',
-						description: 'Helping with growth!',
+						description:
+							'Implementing new third party services into our platform!',
 					},
 				]}
 			/>
@@ -61,13 +62,13 @@ const Experience = () => {
 						name: 'Senior Software Engineer',
 						dateRange: 'August 2020 - October 2021',
 						description:
-							'I lead my team while improving the whole DFS web platform and integrating with international partners.',
+							'Tech led my team in extending the web platform to support international partners.',
 					},
 					{
 						name: 'Software Engineer',
 						dateRange: 'March 2020 - August 2021',
 						description:
-							'My team and I refactored important user facing DFS views to React with unit/e2e testing and analytics.',
+							'My team and I refactored important user facing pages to React including unit/e2e testing and analytics.',
 					},
 				]}
 			/>

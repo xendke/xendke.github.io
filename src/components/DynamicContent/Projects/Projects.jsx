@@ -32,7 +32,10 @@ const Projects = () => {
 					<p>
 						A small social media application similar to twitter but
 						users connect with people only through #interests.{' '}
-						<Link href="https://mousy.io">Demo</Link> &{' '}
+						<Link href="https://mousy-xendke.vercel.app/">
+							Demo
+						</Link>{' '}
+						&{' '}
 						<Link href="https://github.com/xendke/mousy">Code</Link>
 						.
 					</p>

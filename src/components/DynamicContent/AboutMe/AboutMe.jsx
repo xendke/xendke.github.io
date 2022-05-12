@@ -16,7 +16,7 @@ const AboutMe = () => {
 					interfaces with the latest web technologies but I am
 					comfortable enough to work on the entire stack!
 				</p>
-				<p>React, Redux, GraphQL, SCSS, JSS, Node, Python and more!</p>
+				<p>React, GraphQL, SCSS, Node, Python, Ruby and more!</p>
 				<div className="links">
 					<a href="https://www.linkedin.com/in/juanxg/">
 						<div className="linkLogoContainer">

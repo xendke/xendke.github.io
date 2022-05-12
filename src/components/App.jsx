@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import TopBar from 'components/TopBar/TopBar'
 import SideBar from 'components/SideBar/SideBar'
-import AnimationControls from 'components/AnimationControls/AnimationControls'
 import DynamicContent from 'components/DynamicContent/DynamicContent'
 import './App.scss'
 
@@ -41,7 +40,6 @@ const App = () => {
 					handleSectionChange={changeSection}
 				/>
 			</div>
-			<AnimationControls />
 		</div>
 	)
 }

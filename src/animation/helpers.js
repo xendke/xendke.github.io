@@ -71,6 +71,8 @@ class WEBGL {
 	}
 }
 
+const getRandomNumber = (min, max) => Math.random() * (max - min) + min
+
 const debounce = (callback, wait) => {
 	let timeout
 	return (...args) => {
@@ -97,4 +99,4 @@ const throttle = (callback, limit) => {
 	}
 }
 
-export { WEBGL, debounce, throttle }
+export { WEBGL, debounce, throttle, getRandomNumber }
