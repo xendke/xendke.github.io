@@ -1,5 +1,34 @@
 @import 'src/styles.scss';
 
+.Canvas {
+	max-width: 1440px;
+	height: 200px;
+	position: absolute;
+	z-index: -10;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+}
+
+.CanvasOverlay {
+	max-width: 1440px;
+	height: 200px;
+	position: absolute;
+	z-index: -1;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	background: linear-gradient(
+		90deg,
+		#222831ff 0%,
+		#22283100 10%,
+		#22283100 90%,
+		#222831ff 100%
+	);
+}
+
 .TopBar {
 	display: flex;
 	flex-direction: column;

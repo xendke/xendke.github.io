@@ -14,15 +14,8 @@ const TopBar = () => {
 
 	return (
 		<>
-			<canvas
-				ref={canvasRef}
-				style={{
-					height: '200px',
-					position: 'absolute',
-					zIndex: -1,
-					// filter: 'blur(1px)',
-				}}
-			></canvas>
+			<div className="CanvasOverlay"></div>
+			<canvas ref={canvasRef} className="Canvas"></canvas>
 			<div className="TopBar" id="canvas">
 				<div>
 					<picture>

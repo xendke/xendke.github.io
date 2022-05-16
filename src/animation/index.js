@@ -9,6 +9,8 @@ class Line {
 		const boundaries = []
 		const velocities = []
 
+		const xShift = getRandomNumber(-2, 2)
+
 		const maxY = 5
 		const boundarySpace = 2
 		const spacing = 10
@@ -16,7 +18,7 @@ class Line {
 		const offset = (numberOfPoints * spacing) / 2
 
 		for (let i = 0; i < numberOfPoints; i++) {
-			const x = i * spacing - offset
+			const x = i * spacing - offset + xShift
 			const y = getRandomNumber(maxY * -1, maxY)
 			const boundary = Math.abs(y) + boundarySpace
 			boundaries.push(boundary)
@@ -65,6 +67,7 @@ const runAnimation = (canvasRef) => {
 	const background = new THREE.Color(0x222831)
 	const scene = new THREE.Scene()
 	scene.background = background
+	scene.fog = new THREE.Fog(background, 10, 80)
 	const points = 50
 	const customLines = [
 		new Line(0xf05454, points),
@@ -74,7 +77,6 @@ const runAnimation = (canvasRef) => {
 	customLines.forEach((line) => scene.add(line.getLine()))
 	function resizeCanvas() {
 		var { height } = canvasRef.getBoundingClientRect()
-		console.log(window.outerWidth)
 		camera.aspect = window.outerWidth / height
 		camera.updateProjectionMatrix()
 		renderer.setSize(window.outerWidth, height)
