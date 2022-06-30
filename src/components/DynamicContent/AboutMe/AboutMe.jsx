@@ -10,11 +10,11 @@ const AboutMe = () => {
 			<h1>About Me</h1>
 			<div className="indent">
 				<p>
-					Hello, my name is Juan Xavier Gomez. I am an experienced
-					software engineer who loves working with diverse and smart
-					individuals. Most of the time I create visually appealing
-					interfaces with the latest web technologies but I am
-					comfortable enough to work on the entire stack!
+					Hello, my name is Juan Xavier Gomez. I'm a software
+					engineer! I love working with smart and diverse individuals.
+					Most of the time I create visually appealing interfaces with
+					the latest web technologies but I am comfortable enough to
+					work on the entire stack!
 				</p>
 				<p>React, GraphQL, SCSS, Node, Python, Ruby and more!</p>
 				<div className="links">
