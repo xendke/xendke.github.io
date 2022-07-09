@@ -68,8 +68,9 @@ const runAnimation = (canvasRef) => {
 	const scene = new THREE.Scene()
 	scene.background = background
 	scene.fog = new THREE.Fog(background, 10, 80)
-	const points = 50
-	const customLines = [
+
+	const points = window.outerWidth / 28
+	let customLines = [
 		new Line(0xf05454, points),
 		new Line(0x0098ff, points),
 		new Line(0x00a43a, points),
@@ -80,6 +81,14 @@ const runAnimation = (canvasRef) => {
 		camera.aspect = window.outerWidth / height
 		camera.updateProjectionMatrix()
 		renderer.setSize(window.outerWidth, height)
+		customLines.forEach((line) => scene.remove(line.getLine()))
+		const points = window.outerWidth / 28
+		customLines = [
+			new Line(0xf05454, points),
+			new Line(0x0098ff, points),
+			new Line(0x00a43a, points),
+		]
+		customLines.forEach((line) => scene.add(line.getLine()))
 	}
 	window.addEventListener('resize', debounce(resizeCanvas, 500), false)
 
