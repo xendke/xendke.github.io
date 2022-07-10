@@ -31,7 +31,7 @@ class WEBGL {
 		return this.getErrorMessage(2)
 	}
 
-	static getErrorMessage(version) {
+	static getErrorMessage(version: 1 | 2) {
 		const names = {
 			1: 'WebGL',
 			2: 'WebGL 2',
@@ -71,11 +71,13 @@ class WEBGL {
 	}
 }
 
-const getRandomNumber = (min, max) => Math.random() * (max - min) + min
+const getRandomNumber = (min: number, max: number): number =>
+	Math.random() * (max - min) + min
 
-const debounce = (callback, wait) => {
-	let timeout
-	return (...args) => {
+const debounce = (callback: Function, wait: number) => {
+	const { clearTimeout, setTimeout } = window
+	let timeout: number
+	return (...args: any[]) => {
 		const later = () => {
 			clearTimeout(timeout)
 			callback(...args)
@@ -86,13 +88,13 @@ const debounce = (callback, wait) => {
 	}
 }
 
-const throttle = (callback, limit) => {
+const throttle = (callback: Function, limit: number) => {
 	let waiting = false
-	return (...args) => {
+	return (...args: any[]) => {
 		if (!waiting) {
 			callback(...args)
 			waiting = true
-			setTimeout(() => {
+			window.setTimeout(() => {
 				waiting = false
 			}, limit)
 		}

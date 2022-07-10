@@ -1,0 +1,43 @@
+[
+	{
+		"test": ".*.jsx?$",
+		"jsc": {
+			"parser": {
+				"syntax": "ecmascript",
+				"jsx": true,
+				"dynamicImport": true
+			}
+		}
+	},
+	{
+		"test": ".*.js$",
+		"jsc": {
+			"parser": {
+				"syntax": "ecmascript",
+				"jsx": false,
+				"dynamicImport": true
+			}
+		}
+	},
+	{
+		"test": ".*.tsx$",
+		"jsc": {
+			"parser": {
+				"syntax": "typescript",
+				"tsx": true,
+				"dynamicImport": true
+			}
+		}
+	},
+	{
+		"test": ".*.ts$",
+		"jsc": {
+			"parser": {
+				"syntax": "typescript",
+				"tsx": false,
+				"dynamicImport": true,
+				"topLevelAwait": true
+			}
+		}
+	}
+]

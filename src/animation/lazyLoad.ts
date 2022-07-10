@@ -1,4 +1,4 @@
-export default async (canvasRef) => {
+export default async (canvasRef: HTMLCanvasElement) => {
 	const { default: runAnimation, WEBGL } = await import(
 		/* webpackChunkName: "animation" */ './index'
 	)

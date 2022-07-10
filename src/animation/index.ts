@@ -1,13 +1,18 @@
 import * as THREE from 'three'
 import { WEBGL, debounce, getRandomNumber } from './helpers'
 
+type CameraWithPosition = THREE.PerspectiveCamera & { position: THREE.Vector3 }
+
 class Line {
-	constructor(color, numberOfPoints) {
+	private line: THREE.Line
+	private velocities: number[]
+	private boundaries: number[]
+
+	constructor(color: number, numberOfPoints: number) {
 		const material = new THREE.LineBasicMaterial({ color })
-		const points = []
-		const originalYs = []
-		const boundaries = []
-		const velocities = []
+		const points: THREE.Vector3[] = []
+		const boundaries: number[] = []
+		const velocities: number[] = []
 
 		const xShift = getRandomNumber(-2, 2)
 
@@ -22,7 +27,6 @@ class Line {
 			const y = getRandomNumber(maxY * -1, maxY)
 			const boundary = Math.abs(y) + boundarySpace
 			boundaries.push(boundary)
-			originalYs.push(y)
 			velocities.push(getRandomNumber(velocityMax * -1, velocityMax))
 			points.push(new THREE.Vector3(x, y, 0))
 		}
@@ -31,7 +35,6 @@ class Line {
 		const line = new THREE.Line(geometry, material)
 
 		this.line = line
-		this.originalYs = originalYs
 		this.velocities = velocities
 		this.boundaries = boundaries
 	}
@@ -39,23 +42,28 @@ class Line {
 	getLine() {
 		return this.line
 	}
-	getVelocity(i) {
+	getVelocity(i: number) {
 		return this.velocities[i]
 	}
-	flipVelocity(i) {
+	flipVelocity(i: number) {
 		this.velocities[i] = this.velocities[i] * -1
 	}
-	isOutOfRange(point, i) {
+	isOutOfRange(point: number, i: number) {
 		const min = this.boundaries[i] * -1
 		const max = this.boundaries[i]
 		return point < min || point > max
 	}
 }
 
-const runAnimation = (canvasRef) => {
+const runAnimation = (canvasRef: HTMLCanvasElement) => {
 	var { height } = canvasRef.getBoundingClientRect()
 	const aspectRatio = window.outerWidth / height
-	const camera = new THREE.PerspectiveCamera(75, aspectRatio, 0.1, 1000)
+	const camera = new THREE.PerspectiveCamera(
+		75,
+		aspectRatio,
+		0.1,
+		1000
+	) as CameraWithPosition
 	camera.position.setZ(40)
 
 	const renderer = new THREE.WebGLRenderer({
@@ -97,7 +105,8 @@ const runAnimation = (canvasRef) => {
 
 		customLines.forEach((customLine) => {
 			const line = customLine.getLine()
-			const positions = line.geometry.attributes.position.array
+			const positions: number[] = line.geometry.attributes.position
+				.array as number[]
 
 			for (let i = 1; i <= positions.length; i = i + 3) {
 				const yIndex = Math.floor(i / 3)
