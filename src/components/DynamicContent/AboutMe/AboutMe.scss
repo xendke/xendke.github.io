@@ -1,4 +1,11 @@
+@import 'src/styles.scss';
+
 .AboutMe {
+	.indent {
+		.lit {
+			color: $white;
+		}
+	}
 	.links {
 		display: flex;
 		justify-content: space-evenly;
@@ -11,6 +18,9 @@
 			img {
 				filter: invert(100%);
 			}
+		}
+		.linkLabel {
+			color: $whitel;
 		}
 	}
 }
