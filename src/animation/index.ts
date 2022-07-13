@@ -14,7 +14,7 @@ class Line {
 		const boundaries: number[] = []
 		const velocities: number[] = []
 
-		const xShift = getRandomNumber(-2, 2)
+		const xShift = getRandomNumber(-3, 3)
 
 		const maxY = 5
 		const boundarySpace = 2
@@ -68,6 +68,7 @@ const runAnimation = (canvasRef: HTMLCanvasElement) => {
 
 	const renderer = new THREE.WebGLRenderer({
 		canvas: canvasRef,
+		antialias: true,
 	})
 	renderer.setPixelRatio(window.devicePixelRatio)
 	renderer.setSize(window.outerWidth, height)
@@ -81,7 +82,7 @@ const runAnimation = (canvasRef: HTMLCanvasElement) => {
 	let customLines = [
 		new Line(0xf05454, points),
 		new Line(0x0098ff, points),
-		new Line(0x00a43a, points),
+		new Line(0x33b661, points),
 	]
 	customLines.forEach((line) => scene.add(line.getLine()))
 	function resizeCanvas() {

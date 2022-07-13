@@ -3,13 +3,19 @@
 .AboutMe {
 	.indent {
 		.lit {
-			color: $white;
+			color: #0098ff;
 		}
 	}
 	.links {
 		display: flex;
 		justify-content: space-evenly;
 		margin: 30px 0px;
+
+		a {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
 
 		.linkLogoContainer {
 			width: 50px;
@@ -20,7 +26,8 @@
 			}
 		}
 		.linkLabel {
-			color: $whitel;
+			color: #33b661;
+			font-size: 14px;
 		}
 	}
 }

@@ -63,12 +63,16 @@
 
 		&.name {
 			font-size: 25px;
-			text-shadow: 0px 2px 5px $shadow;
+			font-weight: 600;
+			background: -webkit-linear-gradient(45deg, #f05454, #a83b3b);
+			background-clip: text;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
 		}
 		&.title {
 			font-size: 17px;
 		}
-		&.email {
+		&.location {
 			font-size: 15px;
 			color: $grey;
 		}
