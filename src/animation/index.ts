@@ -1,59 +1,9 @@
 import * as THREE from 'three'
-import { WEBGL, debounce, getRandomNumber } from './helpers'
+import { WEBGL } from './helpers'
+import { current } from './lines'
+import { handleResize } from './resize'
 
 type CameraWithPosition = THREE.PerspectiveCamera & { position: THREE.Vector3 }
-
-class Line {
-	private line: THREE.Line
-	private velocities: number[]
-	private boundaries: number[]
-
-	constructor(color: number, numberOfPoints: number) {
-		const material = new THREE.LineBasicMaterial({ color })
-		const points: THREE.Vector3[] = []
-		const boundaries: number[] = []
-		const velocities: number[] = []
-
-		const xShift = getRandomNumber(-3, 3)
-
-		const maxY = 5
-		const boundarySpace = 2
-		const spacing = 10
-		const velocityMax = 0.03
-		const offset = (numberOfPoints * spacing) / 2
-
-		for (let i = 0; i < numberOfPoints; i++) {
-			const x = i * spacing - offset + xShift
-			const y = getRandomNumber(maxY * -1, maxY)
-			const boundary = Math.abs(y) + boundarySpace
-			boundaries.push(boundary)
-			velocities.push(getRandomNumber(velocityMax * -1, velocityMax))
-			points.push(new THREE.Vector3(x, y, 0))
-		}
-
-		const geometry = new THREE.BufferGeometry().setFromPoints(points)
-		const line = new THREE.Line(geometry, material)
-
-		this.line = line
-		this.velocities = velocities
-		this.boundaries = boundaries
-	}
-
-	getLine() {
-		return this.line
-	}
-	getVelocity(i: number) {
-		return this.velocities[i]
-	}
-	flipVelocity(i: number) {
-		this.velocities[i] = this.velocities[i] * -1
-	}
-	isOutOfRange(point: number, i: number) {
-		const min = this.boundaries[i] * -1
-		const max = this.boundaries[i]
-		return point < min || point > max
-	}
-}
 
 const runAnimation = (canvasRef: HTMLCanvasElement) => {
 	var { height } = canvasRef.getBoundingClientRect()
@@ -78,33 +28,19 @@ const runAnimation = (canvasRef: HTMLCanvasElement) => {
 	scene.background = background
 	scene.fog = new THREE.Fog(background, 10, 80)
 
-	const points = window.outerWidth / 28
-	let customLines = [
-		new Line(0xf05454, points),
-		new Line(0x0098ff, points),
-		new Line(0x33b661, points),
-	]
-	customLines.forEach((line) => scene.add(line.getLine()))
-	function resizeCanvas() {
-		var { height } = canvasRef.getBoundingClientRect()
-		camera.aspect = window.outerWidth / height
-		camera.updateProjectionMatrix()
-		renderer.setSize(window.outerWidth, height)
-		customLines.forEach((line) => scene.remove(line.getLine()))
-		const points = window.outerWidth / 28
-		customLines = [
-			new Line(0xf05454, points),
-			new Line(0x0098ff, points),
-			new Line(0x00a43a, points),
-		]
-		customLines.forEach((line) => scene.add(line.getLine()))
-	}
-	window.addEventListener('resize', debounce(resizeCanvas, 500), false)
+	current.lines.forEach((line) => scene.add(line.getLine()))
+
+	handleResize({
+		canvas: canvasRef,
+		scene,
+		camera,
+		renderer,
+	})
 
 	const animate = () => {
 		requestAnimationFrame(animate)
 
-		customLines.forEach((customLine) => {
+		current.lines.forEach((customLine) => {
 			const line = customLine.getLine()
 			const positions: number[] = line.geometry.attributes.position
 				.array as number[]
