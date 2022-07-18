@@ -16,13 +16,13 @@ export const handleResize = ({ canvas, scene, camera, renderer }: Params) => {
 		var { height } = canvas.getBoundingClientRect()
 		if (previousWidth && previousHeight) {
 			if (
-				previousHeight !== window.outerHeight &&
+				previousHeight !== window.innerHeight &&
 				previousWidth === window.outerWidth
 			) {
 				return
 			}
 		}
-		previousHeight = window.outerHeight
+		previousHeight = window.innerHeight
 		previousWidth = window.outerWidth
 		camera.aspect = window.outerWidth / height
 		camera.updateProjectionMatrix()
