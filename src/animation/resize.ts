@@ -8,21 +8,15 @@ interface Params {
 	renderer: THREE.WebGLRenderer
 }
 
-let previousHeight: number
-let previousWidth: number
+let previousWidth = window.innerWidth
 
 export const handleResize = ({ canvas, scene, camera, renderer }: Params) => {
 	function resizeCanvas() {
 		var { height } = canvas.getBoundingClientRect()
-		if (previousWidth && previousHeight) {
-			if (
-				previousHeight !== window.innerHeight &&
-				previousWidth === window.outerWidth
-			) {
-				return
-			}
+		const difference = Math.abs(window.innerWidth - previousWidth)
+		if (difference < 20) {
+			return
 		}
-		previousHeight = window.innerHeight
 		previousWidth = window.outerWidth
 		camera.aspect = window.outerWidth / height
 		camera.updateProjectionMatrix()
