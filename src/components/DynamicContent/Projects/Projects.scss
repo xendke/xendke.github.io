@@ -10,10 +10,22 @@
 
 			@include atBreakpoint(tablet) {
 				flex-basis: 44%;
+				img {
+					max-height: 120px;
+					max-width: auto;
+				}
 			}
 
 			h2 {
 				margin: 5px 0px;
+			}
+
+			img {
+				max-width: 100%;
+				cursor: pointer;
+			}
+			&.noborder {
+				border-left: none;
 			}
 		}
 	}

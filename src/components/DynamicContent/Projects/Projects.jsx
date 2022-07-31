@@ -1,4 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Modal from '../../Modal/Modal'
+import mousy from 'assets/mousy.png'
+import catchup from 'assets/catchup.png'
 import './Projects.scss'
 
 const Link = ({ href, children }) => (
@@ -8,25 +11,17 @@ const Link = ({ href, children }) => (
 )
 
 const Projects = () => {
+	const [imageToPreview, setImageToPreview] = useState(null)
 	return (
 		<div className="Section Projects">
+			<Modal
+				isOpen={imageToPreview}
+				onClose={() => setImageToPreview(null)}
+			>
+				<img src={imageToPreview} />
+			</Modal>
 			<h1>Projects</h1>
 			<div className="flex">
-				<div className="indent">
-					<h2>Synapse</h2>
-					<p>
-						I developed and maintained many web applications at
-						Synapse. Here are some examples:{' '}
-						<Link href="https://magazinediscountcenter.com/">
-							One
-						</Link>{' '}
-						and{' '}
-						<Link href="https://mdc.magazinediscountcenter.com/bizrateapptest/#/split/BIZ3306/webpromotion=20003054">
-							Two
-						</Link>
-						.
-					</p>
-				</div>
 				<div className="indent">
 					<h2>Mousy</h2>
 					<p>
@@ -40,6 +35,9 @@ const Projects = () => {
 						.
 					</p>
 				</div>
+				<div className="indent noborder">
+					<img onClick={() => setImageToPreview(mousy)} src={mousy} />
+				</div>
 				<div className="indent">
 					<h2>Catchup</h2>
 					<p>
@@ -50,6 +48,12 @@ const Projects = () => {
 						& <Link href="https://catchup-chat.web.app">Demo</Link>.
 					</p>
 				</div>
+				<div className="indent noborder">
+					<img
+						onClick={() => setImageToPreview(catchup)}
+						src={catchup}
+					/>
+				</div>
 				<div className="indent">
 					<h2>Digitaizer</h2>
 					<p>
@@ -59,20 +63,6 @@ const Projects = () => {
 							Code
 						</Link>
 						.
-					</p>
-				</div>
-				<div className="indent">
-					<h2>Pet or Not</h2>
-					<p>
-						A simple web app that can recognize whether a pet exist
-						in a given image!{' '}
-						<Link href="https://github.com/xendke/pet-or-not">
-							Code
-						</Link>{' '}
-						&{' '}
-						<Link href="https://pet-or-not.herokuapp.com/">
-							Demo
-						</Link>
 					</p>
 				</div>
 				<div className="indent">
