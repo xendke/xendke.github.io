@@ -51,7 +51,7 @@ const Experience = () => {
 						name: 'Senior Software Engineer',
 						dateRange: 'October 2021 - Present',
 						description:
-							'Implementing new third party services into our platform!',
+							'Implementing new third party services into our platform, and building A/B tests to better assess the needs of our learners!',
 					},
 				]}
 			/>
