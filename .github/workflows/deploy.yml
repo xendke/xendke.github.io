@@ -1,15 +1,15 @@
 name: Deploy
 on:
-  push:
-    branches:
-      - main
-  jobs:
-    deploy:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v3
-        - name: Setup
-          run: yarn install --immutable
-        - name: Deploy to GitHub Pages
-          run: yarn run deploy
+		push:
+				branches:
+						- main
+jobs:
+		deploy:
+				runs-on: ubuntu-latest
+				steps:
+						- name: Checkout
+								uses: actions/checkout@v3
+						- name: Setup
+								run: yarn install --immutable
+						- name: Deploy to GitHub Pages
+								run: yarn run deploy	
