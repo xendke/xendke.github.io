@@ -12,15 +12,14 @@ const AboutMe = () => {
 			<h1>About Me</h1>
 			<div className="indent">
 				<p>
-					Hello, my name is Juan Xavier Gomez. I'm a{' '}
-					<Enhance>software engineer</Enhance>! I love working with
-					smart and diverse individuals. Most of the time I create
-					visually appealing interfaces with the{' '}
-					<Enhance>latest web technologies</Enhance> but I am
-					comfortable enough to work on the{' '}
-					<Enhance>entire stack</Enhance>!
+					I'm a <Enhance>software engineer</Enhance> with strong front-end expertise and working experience in backend development.
+					I enjoy building <Enhance>visually engaging interfaces</Enhance> and highly polished features, and I thrive
+					in collaborative environments where I can work alongside smart, diverse teams.
 				</p>
-				<p>React, GraphQL, SCSS, Node, Python, Ruby and more!</p>
+				<p>
+					I'm also excited about leveraging <Enhance>AI tools</Enhance> and integrating
+					intelligent systems to build more innovative and efficient solutions.
+				</p>
 				<div className="links">
 					<a href="https://www.linkedin.com/in/juanxg/">
 						<div className="linkLogoContainer">

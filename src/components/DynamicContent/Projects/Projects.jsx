@@ -36,7 +36,11 @@ const Projects = () => {
 					</p>
 				</div>
 				<div className="indent noborder">
-					<img onClick={() => setImageToPreview(mousy)} src={mousy} />
+					<img
+						onClick={() => setImageToPreview(mousy)}
+						src={mousy}
+						alt="Image of Mousy, a social media application."
+					/>
 				</div>
 				<div className="indent">
 					<h2>Catchup</h2>
@@ -52,6 +56,7 @@ const Projects = () => {
 					<img
 						onClick={() => setImageToPreview(catchup)}
 						src={catchup}
+						alt="Image of Catchup, an tiny anonymous chat web app."
 					/>
 				</div>
 				<div className="indent">
