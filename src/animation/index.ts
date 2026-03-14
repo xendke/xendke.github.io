@@ -9,16 +9,9 @@ const runAnimation = (
 	canvasRef: HTMLCanvasElement,
 	containerRef: { current: HTMLDivElement | null }
 ) => {
-	const width = containerRef.current
-		? containerRef.current.getBoundingClientRect().width
-		: window.innerWidth
-	const height = containerRef.current
-		? containerRef.current.getBoundingClientRect().height
-		: 200
-	if (containerRef.current) {
-		containerRef.current.style.width = `${Math.round(width)}px`
-		containerRef.current.style.height = `${Math.round(height)}px`
-	}
+	const rect = containerRef.current?.getBoundingClientRect()
+	const width = rect ? Math.round(rect.width) : window.innerWidth
+	const height = rect ? Math.round(rect.height) : 200
 	const aspectRatio = width / height
 	const camera = new THREE.PerspectiveCamera(
 		75,

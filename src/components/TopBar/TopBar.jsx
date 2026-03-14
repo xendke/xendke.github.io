@@ -16,7 +16,7 @@ const TopBar = () => {
 	}, [])
 
 	return (
-		<>
+		<div className="TopBarWrapper">
 			<div ref={canvasContainerRef} className="CanvasContainer">
 				<canvas ref={canvasRef} className="Canvas"></canvas>
 				<div className="CanvasOverlay"></div>
@@ -39,7 +39,7 @@ const TopBar = () => {
 					<p className="line location">New York, NY</p>
 				</div>
 			</div>
-		</>
+		</div>
 	)
 }
 

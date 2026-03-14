@@ -10,6 +10,7 @@ interface Params {
 }
 
 let previousWidth = window.innerWidth
+let previousHeight = 200
 
 export const handleResize = ({
 	canvas,
@@ -20,15 +21,16 @@ export const handleResize = ({
 }: Params) => {
 	function resizeCanvas() {
 		if (!containerRef.current) return
-		const width = Math.round(window.innerWidth)
-		const height = Math.round(containerRef.current.getBoundingClientRect().height)
-		const difference = Math.abs(width - previousWidth)
-		if (difference < 20) {
+		const rect = containerRef.current.getBoundingClientRect()
+		const width = Math.round(rect.width)
+		const height = Math.round(rect.height)
+		const widthDiff = Math.abs(width - previousWidth)
+		const heightDiff = Math.abs(height - previousHeight)
+		if (widthDiff < 20 && heightDiff < 20) {
 			return
 		}
 		previousWidth = width
-		containerRef.current.style.width = `${width}px`
-		containerRef.current.style.height = `${height}px`
+		previousHeight = height
 		camera.aspect = width / height
 		camera.updateProjectionMatrix()
 		renderer.setSize(width, height)

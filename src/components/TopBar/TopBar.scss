@@ -1,15 +1,21 @@
 @import 'src/styles.scss';
 
+.TopBarWrapper {
+	position: relative;
+}
+
 .CanvasContainer {
 	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 	z-index: -10;
 	margin-left: auto;
 	margin-right: auto;
-	left: 0;
-	right: 0;
 	width: 100%;
 	max-width: 1440px;
-	height: 200px;
+	height: 100%;
 	box-sizing: border-box;
 }
 
