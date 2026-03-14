@@ -1,5 +1,12 @@
 @import 'src/styles.scss';
 
+// Modal is portaled to document.body, so style by contentClassName (not nested under .Section.Projects)
+.ProjectPreviewModal {
+	img {
+		max-width: 100%;
+	}
+}
+
 .Section.Projects {
 	.project-list {
 		display: flex;

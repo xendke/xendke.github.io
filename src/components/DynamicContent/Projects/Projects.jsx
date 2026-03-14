@@ -17,6 +17,7 @@ const Projects = () => {
 			<Modal
 				isOpen={imageToPreview}
 				onClose={() => setImageToPreview(null)}
+				contentClassName="ProjectPreviewModal"
 			>
 				<img src={imageToPreview} alt="Screenshot of the project" />
 			</Modal>
