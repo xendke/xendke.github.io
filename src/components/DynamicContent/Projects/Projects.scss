@@ -1,31 +1,30 @@
 @import 'src/styles.scss';
 
 .Section.Projects {
-	.flex {
+	.project-list {
 		display: flex;
-		flex-wrap: wrap;
+		flex-direction: column;
+		gap: 24px;
+	}
 
-		.indent {
-			margin-bottom: 20px;
+	.indent {
+		h2 {
+			margin: 5px 0;
+			font-size: 1.1rem;
+		}
 
-			@include atBreakpoint(tablet) {
-				flex-basis: 44%;
-				img {
-					max-height: 120px;
-					max-width: auto;
-				}
-			}
+		.screenshot-btn {
+			margin-top: 8px;
+			padding: 6px 12px;
+			cursor: pointer;
+			font-size: 0.9rem;
+			background: $blue;
+			color: $white;
+			border: 1px solid $blue;
+			border-radius: 4px;
 
-			h2 {
-				margin: 5px 0px;
-			}
-
-			img {
-				max-width: 100%;
-				cursor: pointer;
-			}
-			&.noborder {
-				border-left: none;
+			&:hover {
+				opacity: 0.9;
 			}
 		}
 	}

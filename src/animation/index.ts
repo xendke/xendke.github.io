@@ -5,9 +5,21 @@ import { handleResize } from './resize'
 
 type CameraWithPosition = THREE.PerspectiveCamera & { position: THREE.Vector3 }
 
-const runAnimation = (canvasRef: HTMLCanvasElement) => {
-	var { height } = canvasRef.getBoundingClientRect()
-	const aspectRatio = window.outerWidth / height
+const runAnimation = (
+	canvasRef: HTMLCanvasElement,
+	containerRef: { current: HTMLDivElement | null }
+) => {
+	const width = containerRef.current
+		? containerRef.current.getBoundingClientRect().width
+		: window.innerWidth
+	const height = containerRef.current
+		? containerRef.current.getBoundingClientRect().height
+		: 200
+	if (containerRef.current) {
+		containerRef.current.style.width = `${Math.round(width)}px`
+		containerRef.current.style.height = `${Math.round(height)}px`
+	}
+	const aspectRatio = width / height
 	const camera = new THREE.PerspectiveCamera(
 		75,
 		aspectRatio,
@@ -21,7 +33,7 @@ const runAnimation = (canvasRef: HTMLCanvasElement) => {
 		antialias: true,
 	})
 	renderer.setPixelRatio(window.devicePixelRatio)
-	renderer.setSize(window.outerWidth, height)
+	renderer.setSize(width, height)
 
 	const background = new THREE.Color(0x222831)
 	const scene = new THREE.Scene()
@@ -32,6 +44,7 @@ const runAnimation = (canvasRef: HTMLCanvasElement) => {
 
 	handleResize({
 		canvas: canvasRef,
+		containerRef,
 		scene,
 		camera,
 		renderer,

@@ -18,10 +18,10 @@ const Projects = () => {
 				isOpen={imageToPreview}
 				onClose={() => setImageToPreview(null)}
 			>
-				<img src={imageToPreview} />
+				<img src={imageToPreview} alt="Screenshot of the project" />
 			</Modal>
 			<h1>Projects</h1>
-			<div className="flex">
+			<div className="project-list">
 				<div className="indent">
 					<h2>Mousy</h2>
 					<p>
@@ -34,30 +34,31 @@ const Projects = () => {
 						<Link href="https://github.com/xendke/mousy">Code</Link>
 						.
 					</p>
-				</div>
-				<div className="indent noborder">
-					<img
+					<button
+						type="button"
+						className="screenshot-btn"
 						onClick={() => setImageToPreview(mousy)}
-						src={mousy}
-						alt="Image of Mousy, a social media application."
-					/>
+					>
+						View screenshot
+					</button>
 				</div>
 				<div className="indent">
 					<h2>Catchup</h2>
 					<p>
 						An anonymous chat web app! React, SCSS, Firebase.{' '}
+						<Link href="https://catchup-chat.web.app">Demo</Link>{' '}
+						&{' '}
 						<Link href="https://github.com/xendke/catchup">
 							Code
-						</Link>{' '}
-						& <Link href="https://catchup-chat.web.app">Demo</Link>.
+						</Link>.
 					</p>
-				</div>
-				<div className="indent noborder">
-					<img
+					<button
+						type="button"
+						className="screenshot-btn"
 						onClick={() => setImageToPreview(catchup)}
-						src={catchup}
-						alt="Image of Catchup, an tiny anonymous chat web app."
-					/>
+					>
+						View screenshot
+					</button>
 				</div>
 				<div className="indent">
 					<h2>Digitaizer</h2>

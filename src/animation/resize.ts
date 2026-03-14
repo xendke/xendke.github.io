@@ -3,6 +3,7 @@ import { debounce } from './helpers'
 
 interface Params {
 	canvas: HTMLCanvasElement
+	containerRef: { current: HTMLDivElement | null }
 	scene: THREE.Scene
 	camera: THREE.PerspectiveCamera
 	renderer: THREE.WebGLRenderer
@@ -10,19 +11,29 @@ interface Params {
 
 let previousWidth = window.innerWidth
 
-export const handleResize = ({ canvas, scene, camera, renderer }: Params) => {
+export const handleResize = ({
+	canvas,
+	containerRef,
+	scene,
+	camera,
+	renderer,
+}: Params) => {
 	function resizeCanvas() {
-		var { height } = canvas.getBoundingClientRect()
-		const difference = Math.abs(window.innerWidth - previousWidth)
+		if (!containerRef.current) return
+		const width = Math.round(window.innerWidth)
+		const height = Math.round(containerRef.current.getBoundingClientRect().height)
+		const difference = Math.abs(width - previousWidth)
 		if (difference < 20) {
 			return
 		}
-		previousWidth = window.outerWidth
-		camera.aspect = window.outerWidth / height
+		previousWidth = width
+		containerRef.current.style.width = `${width}px`
+		containerRef.current.style.height = `${height}px`
+		camera.aspect = width / height
 		camera.updateProjectionMatrix()
-		renderer.setSize(window.outerWidth, height)
+		renderer.setSize(width, height)
 		current.lines.forEach((line) => scene.remove(line.getLine()))
-		const points = window.outerWidth / 28
+		const points = width / 28
 		current.lines = getCustomLines([0xf05454, 0x0098ff, 0x00a43a], points)
 		current.lines.forEach((line) => scene.add(line.getLine()))
 	}

@@ -8,26 +8,32 @@
 	}
 	.links {
 		display: flex;
-		justify-content: space-evenly;
-		margin: 30px 0px;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 10px;
+		margin: 30px 0;
 
-		a {
-			display: flex;
-			flex-direction: column;
+		.link-btn {
+			display: inline-flex;
 			align-items: center;
-		}
+			gap: 6px;
+			padding: 6px 12px;
+			font: inherit;
+			font-size: 0.9rem;
+			background: $blue;
+			color: $white;
+			border: 1px solid $blue;
+			border-radius: 4px;
+			text-decoration: none;
+			cursor: pointer;
 
-		.linkLogoContainer {
-			width: 50px;
-			margin: auto;
-			margin-bottom: 3px;
-			img {
-				filter: invert(100%);
+			&:hover {
+				opacity: 0.9;
 			}
-		}
-		.linkLabel {
-			color: #0098ff;
-			font-size: 14px;
+
+			.link-icon {
+				flex-shrink: 0;
+			}
 		}
 	}
 }

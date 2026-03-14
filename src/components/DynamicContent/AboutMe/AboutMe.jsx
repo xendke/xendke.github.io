@@ -1,10 +1,26 @@
 import React from 'react'
 import './AboutMe.scss'
-import githubIcon from 'assets/github.svg'
-import twitterIcon from 'assets/twitter.svg'
-import linkedinIcon from 'assets/linkedin.svg'
 
 const Enhance = ({ children }) => <span className="lit">{children}</span>
+
+const LinkIcon = () => (
+	<svg
+		className="link-icon"
+		width="14"
+		height="14"
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		strokeWidth="2"
+		strokeLinecap="round"
+		strokeLinejoin="round"
+		aria-hidden
+	>
+		<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+		<polyline points="15 3 21 3 21 9" />
+		<line x1="10" y1="14" x2="21" y2="3" />
+	</svg>
+)
 
 const AboutMe = () => {
 	return (
@@ -21,23 +37,41 @@ const AboutMe = () => {
 					intelligent systems to build more innovative and efficient solutions.
 				</p>
 				<div className="links">
-					<a href="https://www.linkedin.com/in/juanxg/">
-						<div className="linkLogoContainer">
-							<img src={linkedinIcon} alt="LinkedIn Icon Link" />
-						</div>
-						<span className="linkLabel">LinkedIn</span>
+					<a
+						href="https://www.linkedin.com/in/juanxg/"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="link-btn"
+					>
+						<LinkIcon />
+						LinkedIn
 					</a>
-					<a href="https://github.com/xendke">
-						<div className="linkLogoContainer">
-							<img src={githubIcon} alt="GitHub Icon Link" />
-						</div>
-						<span className="linkLabel">GitHub</span>
+					<a
+						href="https://github.com/xendke"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="link-btn"
+					>
+						<LinkIcon />
+						GitHub
 					</a>
-					<a href="https://twitter.com/xendke">
-						<div className="linkLogoContainer">
-							<img src={twitterIcon} alt="Twitter Icon Link" />
-						</div>
-						<span className="linkLabel">Twitter</span>
+					<a
+						href="https://dev.to/xendke"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="link-btn"
+					>
+						<LinkIcon />
+						Dev.to
+					</a>
+					<a
+						href="mailto:xendke@gmail.com"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="link-btn"
+					>
+						<LinkIcon />
+						Email
 					</a>
 				</div>
 			</div>

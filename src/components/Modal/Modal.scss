@@ -12,41 +12,52 @@
 
 .modalcontainer {
 	position: fixed;
-	padding: 1em;
 	top: 50%;
 	left: 50%;
 	z-index: 101;
 	transform: translate(-50%, -50%);
 	width: 80%;
 	height: 80%;
-	justify-content: center;
-	text-align: center;
-	background: $white;
-	border-radius: 10px;
-	border: 1px solid $shadow;
-	// border-right: 1px solid rgba(255, 255, 255, 0.2);
-	// border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 	display: flex;
 	flex-direction: column;
-
-	button {
-		font-family: 'Barlow Condensed', sans-serif;
-		background-color: $white;
-		color: $blue;
-		border: none;
-		justify-self: flex-end;
-		align-self: flex-end;
-		cursor: pointer;
-	}
+	background: $blue;
+	border-radius: 10px;
+	border: 1px solid $shadow;
+	overflow: hidden;
 
 	.modal {
+		flex: 1;
 		display: flex;
 		align-items: center;
+		justify-content: center;
 		padding: 1em;
 		overflow: auto;
 		img {
 			max-height: 100%;
 			margin: auto;
+		}
+	}
+
+	.modal-chin {
+		flex-shrink: 0;
+		padding: 12px;
+		text-align: center;
+		border-top: 1px solid rgba(255, 255, 255, 0.15);
+		
+
+		button {
+			font-family: 'Poppins', sans-serif;
+			font-size: 1rem;
+			background: $white;
+			color: $blue;
+			border: none;
+			padding: 8px 20px;
+			border-radius: 4px;
+			cursor: pointer;
+
+			&:hover {
+				opacity: 0.9;
+			}
 		}
 	}
 }

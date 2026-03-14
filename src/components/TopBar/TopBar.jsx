@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import imageOfJuan from 'assets/self.png'
+import imageOfJuan from 'assets/self.jpg'
 import imageOfJuanWebP from 'assets/self.webp'
 import './TopBar.scss'
 
@@ -7,15 +7,20 @@ import loadAnimation from '../../animation/lazyLoad'
 
 const TopBar = () => {
 	const canvasRef = useRef()
+	const canvasContainerRef = useRef()
 
 	useEffect(() => {
-		if (canvasRef.current) loadAnimation(canvasRef.current)
+		if (canvasRef.current && canvasContainerRef.current) {
+			loadAnimation(canvasRef.current, canvasContainerRef)
+		}
 	}, [])
 
 	return (
 		<>
-			<div className="CanvasOverlay"></div>
-			<canvas ref={canvasRef} className="Canvas"></canvas>
+			<div ref={canvasContainerRef} className="CanvasContainer">
+				<canvas ref={canvasRef} className="Canvas"></canvas>
+				<div className="CanvasOverlay"></div>
+			</div>
 			<div className="TopBar" id="canvas">
 				<div>
 					<picture>

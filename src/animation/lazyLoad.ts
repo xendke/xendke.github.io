@@ -1,8 +1,11 @@
-export default async (canvasRef: HTMLCanvasElement) => {
+export default async (
+	canvas: HTMLCanvasElement,
+	containerRef: { current: HTMLDivElement | null }
+) => {
 	const { default: runAnimation, WEBGL } = await import(
 		/* webpackChunkName: "animation" */ './index'
 	)
-	if (WEBGL.isWebGLAvailable()) {
-		runAnimation(canvasRef)
+	if (WEBGL.isWebGLAvailable() && containerRef?.current) {
+		runAnimation(canvas, containerRef)
 	}
 }

@@ -1,25 +1,32 @@
 @import 'src/styles.scss';
 
-.Canvas {
-	max-width: 1440px;
-	height: 200px;
+.CanvasContainer {
 	position: absolute;
 	z-index: -10;
 	margin-left: auto;
 	margin-right: auto;
 	left: 0;
 	right: 0;
+	width: 100%;
+	max-width: 1440px;
+	height: 200px;
+	box-sizing: border-box;
+}
+
+.Canvas {
+	display: block;
+	width: 100%;
+	height: 100%;
 }
 
 .CanvasOverlay {
-	max-width: 1440px;
-	height: 200px;
 	position: absolute;
-	z-index: -1;
-	margin-left: auto;
-	margin-right: auto;
+	top: 0;
 	left: 0;
-	right: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	pointer-events: none;
 	background: linear-gradient(
 		90deg,
 		#222831ff 0%,
