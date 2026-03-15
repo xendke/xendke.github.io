@@ -56,15 +56,6 @@ const AboutMe = () => {
 						GitHub
 					</a>
 					<a
-						href="https://dev.to/xendke"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="link-btn"
-					>
-						<LinkIcon />
-						Dev.to
-					</a>
-					<a
 						href="mailto:xendke@gmail.com"
 						target="_blank"
 						rel="noopener noreferrer"
@@ -72,6 +63,15 @@ const AboutMe = () => {
 					>
 						<LinkIcon />
 						Email
+					</a>
+					<a
+						href="https://drive.google.com/uc?export=download&id=1fH8XnV39cIDCmXGgu8LZFB27dY9cbesm"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="link-btn"
+					>
+						<LinkIcon />
+						Resume
 					</a>
 				</div>
 			</div>
