@@ -51,7 +51,7 @@ const Experience = () => {
 						name: 'Senior Software Engineer',
 						dateRange: 'October 2021 - Present',
 						description:
-							'Implementing new third party services into our platform, and building A/B tests to better assess the needs of our learners!',
+							'Tech led the development of new features like Codecademy Coaching and Teams Summary Dashboard. Improved our subcription conversion funnel with A/B tests.',
 					},
 				]}
 			/>
@@ -79,7 +79,7 @@ const Experience = () => {
 						name: 'Software Engineer',
 						dateRange: 'September 2018 - March 2020',
 						description:
-							"At Synapse, I created and maintained Ecommerce React web applications for the company's multiple channels of revenue.",
+							"I created and maintained e-commerce React web applications for the company's multiple channels of revenue.",
 					},
 				]}
 			/>
