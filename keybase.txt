@@ -1,0 +1,76 @@
+==================================================================
+https://keybase.io/xendke
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://xendke.github.io
+  * I am xendke (https://keybase.io/xendke) on keybase.
+  * I have a public key with fingerprint 15F8 41B8 5403 DCA5 B0E1  22C9 F269 3311 36A5 6C83
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120f06d29f05fec255e0a917e50981e385df5a170ce81ebfbb83c9ab2a474c536940a",
+      "fingerprint": "15f841b85403dca5b0e122c9f269331136a56c83",
+      "host": "keybase.io",
+      "key_id": "f269331136a56c83",
+      "kid": "0101f084e077f1c91f3d9ee51a0a151b66f2788a316b97a9f4c346f3b3fdf41f28030a",
+      "uid": "8a92935f11b83206559c9138709d6019",
+      "username": "xendke"
+    },
+    "service": {
+      "hostname": "xendke.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1585687029,
+  "expire_in": 157680000,
+  "prev": "a126f189fab0a756720b6cbb85b4f58f78d4071fbdfd1f1ae613677b743ec21b",
+  "seqno": 23,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+yMNxAnicbVJpTFxVFB4WoUzFARGpTdD6bCNQlnff/iaCtKgYStirwtSOb7l3eMx0
+ZpgZlilSF6CaVgnRItAhQiwoiFJrm6qxaYChaQsEpSqdWuySpkJLII1BFEH0Ddof
+Jt4/N+ec7/vud849w+FBGm3ALwoZyXRb6gJGBw9XaHbX9f5ag4k22Y3pazAzXLug
+RYZOl9GsyJgewwGBI5yRCR7hNIISQdMQF3jAQhrnOQBJjpYRLQAWl6AaikgUOVLi
+BZEQKJaSaJLhKVzAEjGkWE3QYXcoVpcqC2jEUUDkaAonZUmgRRwCgpB4RDA8SQJA
+MgLNSBypEkttTj9DNScKTpis2NScGhjX7P0P/q5vHCCcoyDOsghIPECkzENIAwEX
+AA1EhkEEy3ECCRiRZwUeURJJMYgUSSQjCiCCw8k13xVrcpzAEzxJI6B6JgmcoWle
+1SQ5FudlBge8H+iEDquwB6roamiVzRCrTcTUXKUiQf9Y/X38p55sUlylFeI/Hdkd
+NpdNslnUaqnLZXfq/WyX2+6HV0HR+K+QUVSssjpJlVEJHU7FZsX0QEVKLsWvDGiO
+ZlRTBJ+IwWq74oBGxY+gWYbD1eN/B1aqkgIgGAQ4HgkiLrA0wxK4yEjq39EihWgO
+sZxM4SxAooxkgIAAGXXELCuyFKnuABAxf2vlVhumJ0jVp2BSNZ2KySq4Khxq40OD
+u4I1AVpNyD2B/hXTaMMi7i5ezy3diu6r51M90anBD2s3Jz22pc/WtjMnYcf16rIL
+5Y/eMR3PtkV0D8cZ7j3xRuzoKvAFHv34k5FtI8ci/2xujo3anBB289vITROvTB6o
+PnY+TkpPOG9YGhumUH/06EpbV3rKRnP8GcF76uZnNUrZh+t+P6d9dcjBzRQ8t7f+
+TGCabyx1JHudJyYhOKz9u6dmo/p9VY0D413uK56TOR0Ns+7bnz9T1zo1FxSfGl+f
+WJjyDtWRWRc6uC/p9cGw1rfAleTfMg+m9WQWZJB0zE+rUt4EOpGwH3ZPLtR60x5y
+2/9qgr1FPkufc8ag33hj67vPPvGi+VIE3xjuuthp+TRzfPvEaemIef2BwuH1sZ6M
+2A9uhfcufDPfMle8qaihsXznsGHhhyd3GbYnhRjnp++bvrRa3vPltRFns2s8y0Jk
+oaU8/os7h32H5i5mZCz/UVC/6B0493UjvuVnvpj1HlqOm7+hz/3+8ZjOvPALodFn
+X7ta/+BHlpML2U0bFn0/Np+9nN4aFLdhMM77yOUpr7mtxbAjZmuR4WpWSYX9aW3P
+/SnRjvfNUUfcxU2LqavlLVG1Q8Z+XW7EeyUHx0O5Lk//pFf3wptjI6eSZrbtm9a9
+nZPjvV6aW9CgPJBfUnN8dwrgXsoeGLWa+trD9k6d1lDXCn0rt18OyWpp7+hdsuVX
+lc16Wpb7O/ckCkdBflTI332Fu2M=
+=+LIh
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/xendke
+
+==================================================================
+
