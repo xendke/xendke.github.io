@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Modal from '../../Modal/Modal'
 import mousy from 'assets/mousy.png'
-import catchup from 'assets/catchup.png'
+import forest from 'assets/forest.png'
 import './Projects.scss'
 
 const Link = ({ href, children }) => (
@@ -44,19 +44,20 @@ const Projects = () => {
 					</button>
 				</div>
 				<div className="indent">
-					<h2>Catchup</h2>
+					<h2>Forest</h2>
 					<p>
-						An anonymous chat web app! React, SCSS, Firebase.{' '}
-						<Link href="https://catchup-chat.web.app">Demo</Link>{' '}
-						&{' '}
-						<Link href="https://github.com/xendke/catchup">
-							Code
-						</Link>.
+						A mood tracking and self-growth web app with daily
+						check-ins, emotional pattern insights, and guided
+						reflection tools.{' '}
+						<Link href="https://forest-web-one.vercel.app/">
+							Demo
+						</Link>
+						.
 					</p>
 					<button
 						type="button"
 						className="screenshot-btn"
-						onClick={() => setImageToPreview(catchup)}
+						onClick={() => setImageToPreview(forest)}
 					>
 						View screenshot
 					</button>
