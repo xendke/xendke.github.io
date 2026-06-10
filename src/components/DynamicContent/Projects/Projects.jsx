@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Modal from '../../Modal/Modal'
 import mousy from 'assets/mousy.png'
 import forest from 'assets/forest.png'
+import digitaizer from 'assets/digitaizer.png'
 import './Projects.scss'
 
 const Link = ({ href, children }) => (
@@ -65,13 +66,24 @@ const Projects = () => {
 				<div className="indent">
 					<h2>Digitaizer</h2>
 					<p>
-						Basic GUI and Neural Network to identify your
+						Basic web app and neural network to identify your
 						handwritten digits! Python, Tkinter, Pandas.{' '}
+						<Link href="https://digitaizer.vercel.app/">
+							Demo
+						</Link>{' '}
+						&{' '}
 						<Link href="https://github.com/xendke/digitaizer">
 							Code
 						</Link>
 						.
 					</p>
+					<button
+						type="button"
+						className="screenshot-btn"
+						onClick={() => setImageToPreview(digitaizer)}
+					>
+						View screenshot
+					</button>
 				</div>
 				<div className="indent">
 					<h2>More</h2>
